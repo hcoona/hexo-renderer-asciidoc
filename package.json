@@ -1,0 +1,23 @@
+{
+  "name": "hexo-renderer-asciidoc",
+  "version": "1.0.0",
+  "description": "Asciidoc renderer plugin for hexo",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hcoona/hexo-renderer-asciidoc.git"
+  },
+  "keywords": [
+    "hexo",
+    "asciidoc"
+  ],
+  "author": "Zhang Shuai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hcoona/hexo-renderer-asciidoc/issues"
+  },
+  "homepage": "https://github.com/hcoona/hexo-renderer-asciidoc",
+  "dependencies": {
+    "asciidoctor.js": "^1.5.2"
+  }
+}
