@@ -18,7 +18,7 @@ hexo.extend.renderer.register('adoc', 'html', function(data, locals) {
   $('.highlight code').each(function(index, elem) {
     options.lang = elem.attribs['lang-data'];
     var result = util.highlight($(elem).text(), options);
-    $(elem).html('<escape>' + result + '</escape>');
+    $(elem).html(result);
   });
 
   return $.html()
