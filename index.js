@@ -12,9 +12,13 @@ var options = {
   wrap: false
 };
 
+var cheerio_load_option = {
+  decodeEntities: false
+};
+
 hexo.extend.renderer.register('adoc', 'html', function(data, locals) {
   var html = processor.$convert(data.text, null);
-  var $ = cheerio.load(html);
+  var $ = cheerio.load(html, cheerio_load_option);
 
   $('.highlight code').each(function(index, elem) {
     options.lang = elem.attribs['data-lang'];
