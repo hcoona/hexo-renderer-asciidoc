@@ -1,5 +1,6 @@
 'use strict'
 
+var entities = require('entities');
 var util = require('hexo-util');
 var cheerio = require('cheerio');
 var asciidoctor = require('asciidoctor.js')();
@@ -22,7 +23,8 @@ hexo.extend.renderer.register('adoc', 'html', function(data, locals) {
 
   $('.highlight code').each(function(index, elem) {
     options.lang = elem.attribs['data-lang'];
-    var content = util.highlight($(elem).text(), options);
+    var code = entities.decodeXML($(elem).text());
+    var content = util.highlight(code, options);
     $(elem).html(content);
   });
 
