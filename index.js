@@ -17,7 +17,7 @@ var cheerio_load_option = {
   decodeEntities: false
 };
 
-hexo.extend.renderer.register('adoc', 'html', function(data, locals) {
+function renderer(data, locals) {
   var html = processor.$convert(data.text, null);
   var $ = cheerio.load(html, cheerio_load_option);
 
@@ -31,5 +31,8 @@ hexo.extend.renderer.register('adoc', 'html', function(data, locals) {
   return $.html()
              .replace(/{/g, '&#123;')
              .replace(/}/g, '&#125;');
-}, true);
+}
 
+hexo.extend.renderer.register('ad', 'html', renderer, true);
+hexo.extend.renderer.register('adoc', 'html', renderer, true);
+hexo.extend.renderer.register('asciidoc', 'html', renderer, true);
