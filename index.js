@@ -17,8 +17,13 @@ var cheerio_load_option = {
   decodeEntities: false
 };
 
+var asciidoc_options = {
+  doctype: 'book'
+};
+
 function renderer(data, locals) {
-  var html = processor.$convert(data.text, null);
+  var asciidoc_options_opal = asciidoctor.Opal.hash(asciidoc_options);
+  var html = processor.$convert(data.text, asciidoc_options_opal);
   var $ = cheerio.load(html, cheerio_load_option);
 
   $('.highlight code').each(function(index, elem) {
