@@ -4,10 +4,9 @@ var entities = require('entities');
 var util = require('hexo-util');
 var cheerio = require('cheerio');
 var asciidoctor = require('asciidoctor.js')();
-var processor = asciidoctor.Asciidoctor(true);
 
 var options = {
-  auto_detect: false,
+  autoDetect: false,
   lang: 'plain',
   gutter: false,
   wrap: false
@@ -22,8 +21,7 @@ var asciidoc_options = {
 };
 
 function renderer(data, locals) {
-  var asciidoc_options_opal = asciidoctor.Opal.hash(asciidoc_options);
-  var html = processor.$convert(data.text, asciidoc_options_opal);
+  var html = asciidoctor.convert(data.text);
   var $ = cheerio.load(html, cheerio_load_option);
 
   $('.highlight code').each(function(index, elem) {
