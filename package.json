@@ -1,8 +1,14 @@
 {
   "name": "hexo-renderer-asciidoc",
-  "version": "1.2.0",
+  "version": "1.2.1-dev",
   "description": "Asciidoc renderer plugin for hexo",
   "main": "index.js",
+  "scripts": {
+    "eslint": "eslint .",
+    "jscs": "jscs .",
+    "test": "mocha test/index.js",
+    "test-cov": "istanbul cover --print both _mocha -- test/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hcoona/hexo-renderer-asciidoc.git"
@@ -18,10 +24,18 @@
   },
   "homepage": "https://github.com/hcoona/hexo-renderer-asciidoc",
   "dependencies": {
-    "asciidoctor.js": "1.5.5-4",
+    "asciidoctor.js": "1.5.3",
     "cheerio": "0.22.0",
     "entities": "1.1.1",
-    "hexo-util": "0.6.0",
-    "hexo-log": "0.1.2"
+    "hexo-util": "0.6.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "hexo-fs": "^0.1.5",
+    "eslint": "^1.10.3",
+    "eslint-config-hexo": "^1.0.2",
+    "jscs": "^2.7.0",
+    "jscs-preset-hexo": "^1.0.1",
+    "mocha": "^2.3.4"
   }
 }
