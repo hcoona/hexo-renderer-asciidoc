@@ -23,6 +23,9 @@
     "url": "https://github.com/hcoona/hexo-renderer-asciidoc/issues"
   },
   "homepage": "https://github.com/hcoona/hexo-renderer-asciidoc",
+  "engines": {
+    "node": ">=4.8.0"
+  },
   "dependencies": {
     "asciidoctor.js": "1.5.3",
     "cheerio": "0.22.0",
@@ -32,7 +35,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "hexo-fs": "^0.1.5",
-    "eslint": "^1.10.3",
+    "eslint": "^3.9.1",
     "eslint-config-hexo": "^1.0.2",
     "jscs": "^2.7.0",
     "jscs-preset-hexo": "^1.0.1",
