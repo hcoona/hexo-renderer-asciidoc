@@ -1,4 +1,4 @@
-image:https://travis-ci.org/hcoona/hexo-renderer-asciidoc.svg?branch=develop["Build Status", link="https://travis-ci.org/hcoona/hexo-renderer-asciidoc"] image:https://badge.fury.io/js/hexo-renderer-asciidoc.svg["npm version", link="https://badge.fury.io/js/hexo-renderer-asciidoc"] image:https://img.shields.io/coveralls/hcoona/hexo-renderer-asciidoc.svg["Coverage Status", link=https://coveralls.io/r/hcoona/hexo-renderer-asciidoc?branch=develop]
+image:https://travis-ci.org/hcoona/hexo-renderer-asciidoc.svg?branch=develop["Build Status", link="https://travis-ci.org/hcoona/hexo-renderer-asciidoc"] image:https://badge.fury.io/js/hexo-renderer-asciidoc.svg["npm version", link="https://badge.fury.io/js/hexo-renderer-asciidoc"] image:https://coveralls.io/repos/github/hcoona/hexo-renderer-asciidoc/badge.svg?branch=develop["Coverage Status", link=https://coveralls.io/github/hcoona/hexo-renderer-asciidoc?branch=develop]
 
 = Asciidoc Renderer for Hexo =
 
