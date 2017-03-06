@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-asciidoc",
-  "version": "1.2.1",
+  "version": "1.2.2-dev",
   "description": "Asciidoc renderer plugin for hexo",
   "main": "index.js",
   "scripts": {
@@ -34,9 +34,10 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "hexo-fs": "^0.1.5",
     "eslint": "^3.9.1",
     "eslint-config-hexo": "^1.0.2",
+    "hexo-fs": "^0.1.5",
+    "istanbul": "^0.4.5",
     "jscs": "^2.7.0",
     "jscs-preset-hexo": "^1.0.1",
     "mocha": "^2.3.4"
