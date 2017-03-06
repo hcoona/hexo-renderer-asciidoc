@@ -1,0 +1,11 @@
+image:https://travis-ci.org/hcoona/hexo-renderer-asciidoc.svg?branch=master["Build Status", link="https://travis-ci.org/hcoona/hexo-renderer-asciidoc"] image:https://badge.fury.io/js/hexo-renderer-asciidoc.svg["npm version", link="https://badge.fury.io/js/hexo-renderer-asciidoc"] image:https://coveralls.io/repos/github/hcoona/hexo-renderer-asciidoc/badge.svg?branch=master["Coverage Status", link=https://coveralls.io/github/hcoona/hexo-renderer-asciidoc?branch=master]
+
+= Asciidoc Renderer for Hexo =
+
+Add support for Asciidoc. This plugin uses asciidoctor.js as render engine.
+
+= Install =
+
+----
+$ npm install hexo-renderer-asciidoc --save
+----
