@@ -1,17 +1,15 @@
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc?ref=badge_shield)
+image:https://travis-ci.org/hcoona/hexo-renderer-asciidoc.svg?branch=master["Build Status", link="https://travis-ci.org/hcoona/hexo-renderer-asciidoc"] image:https://badge.fury.io/js/hexo-renderer-asciidoc.svg["npm version", link="https://badge.fury.io/js/hexo-renderer-asciidoc"] image:https://coveralls.io/repos/github/hcoona/hexo-renderer-asciidoc/badge.svg?branch=master["Coverage Status", link=https://coveralls.io/github/hcoona/hexo-renderer-asciidoc?branch=master] image:https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc.svg?type=shield["FOSSA Status", link=https://app.fossa.io/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc?ref=badge_shield]
 
-image:https://travis-ci.org/hcoona/hexo-renderer-asciidoc.svg?branch=master["Build Status", link="https://travis-ci.org/hcoona/hexo-renderer-asciidoc"] image:https://badge.fury.io/js/hexo-renderer-asciidoc.svg["npm version", link="https://badge.fury.io/js/hexo-renderer-asciidoc"] image:https://coveralls.io/repos/github/hcoona/hexo-renderer-asciidoc/badge.svg?branch=master["Coverage Status", link=https://coveralls.io/github/hcoona/hexo-renderer-asciidoc?branch=master]
+= Asciidoc Renderer for Hexo
 
-= Asciidoc Renderer for Hexo =
+Add support for Asciidoc. This plugin uses link:https://www.npmjs.com/package/asciidoctor.js[asciidoctor.js] as render engine.
 
-Add support for Asciidoc. This plugin uses asciidoctor.js as render engine.
-
-= Install =
+== Install
 
 ----
 $ npm install hexo-renderer-asciidoc --save
 ----
 
+== License
 
-## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc?ref=badge_large)
+image:https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc.svg?type=large["FOSSA Status", link=https://app.fossa.io/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc?ref=badge_large]
