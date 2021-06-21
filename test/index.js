@@ -1,16 +1,16 @@
 'use strict';
 
-const entities = require("entities");
-var should = require('chai').should(); // eslint-disable-line
+const entities = require('entities');
+const should = require('chai').should(); // eslint-disable-line
 
-describe('Asciidoc renderer', function () {
-  var r = require('../lib/renderer');
+describe('Asciidoc renderer', () => {
+  const r = require('../lib/renderer');
 
-  it('header', function () {
-    var body = `
+  it('header', () => {
+    const body = `
 == Test H2 ==
 `;
-    var result = r({ text: body }, {});
+    const result = r({ text: body }, {});
 
     result.should.eql(`<div class="sect1">
 <h2 id="_test_h2">Test H2</h2>
@@ -20,8 +20,8 @@ describe('Asciidoc renderer', function () {
 </div>`);
   });
 
-  it('code highlight', function () {
-    var body = `
+  it('code highlight', () => {
+    const body = `
 [source,ruby]
 ----
 require 'sinatra'
@@ -30,7 +30,7 @@ get '/hi' do
   "Hello World!"
 end
 ----`;
-    var result = r({ text: body }, {});
+    const result = r({ text: body }, {});
 
     entities.decodeHTML(result).should.eql(entities.decodeHTML(`<div class="listingblock">
 <div class="content">
