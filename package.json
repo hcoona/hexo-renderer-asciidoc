@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-asciidoc",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Asciidoc renderer plugin for hexo",
   "main": "index.js",
   "scripts": {
