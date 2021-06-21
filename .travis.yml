@@ -1,6 +1,7 @@
-language: node_js
+os: linux
+dist: xenial
 
-sudo: false
+language: node_js
 
 cache:
   apt: true
