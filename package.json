@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/hcoona/hexo-renderer-asciidoc",
   "engines": {
-    "node": ">=6.12.0"
+    "node": ">=12.4.0"
   },
   "dependencies": {
     "asciidoctor": "2.2.4",
