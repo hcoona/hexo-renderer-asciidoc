@@ -1,6 +1,6 @@
 {
   "name": "hexo-renderer-asciidoc",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Asciidoc renderer plugin for hexo",
   "main": "index.js",
   "scripts": {
@@ -27,10 +27,10 @@
     "node": ">=6.12.0"
   },
   "dependencies": {
-    "asciidoctor": "2.0.3",
+    "asciidoctor": "2.2.4",
     "cheerio": "0.22.0",
-    "entities": "2.0.0",
-    "hexo-util": "1.8.1"
+    "entities": "^2.2.0",
+    "hexo-util": "2.5.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
