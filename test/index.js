@@ -34,11 +34,11 @@ end
 
     entities.decodeHTML(result).should.eql(entities.decodeHTML(`<div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-ruby" data-lang="ruby"><pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">'sinatra'</span>
+<pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">'sinatra'</span>
 
 get <span class="string">'/hi'</span> <span class="keyword">do</span>
   <span class="string">"Hello World!"</span>
-<span class="keyword">end</span></code></pre></code></pre>
+<span class="keyword">end</span></code></pre>
 </div>
 </div>`));
   });
