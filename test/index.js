@@ -1,7 +1,7 @@
 'use strict';
 
 const entities = require('entities');
-const should = require('chai').should(); // eslint-disable-line
+require('chai').should();
 
 describe('Asciidoc renderer', () => {
   const r = require('../lib/renderer');

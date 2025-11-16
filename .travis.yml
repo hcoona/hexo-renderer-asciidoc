@@ -7,15 +7,21 @@ cache:
   apt: true
   directories:
     - node_modules
+    - ~/.pnpm-store
+
+before_install:
+  - corepack enable
+  - corepack prepare pnpm@10.22.0 --activate
+
+install:
+  - pnpm install
 
 node_js:
   - "lts/*"
 
 script:
-  - npm run eslint
-  - npm run jscs
-  - npm run test-cov
+  - pnpm run lint
+  - pnpm run test-cov
 
 after_script:
-  - npm install coveralls
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+  - pnpm exec coveralls < ./coverage/lcov.info

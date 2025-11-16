@@ -1,6 +1,0 @@
-{
-  "extends": "hexo/test",
-  "parserOptions": {
-    "ecmaVersion": 6
-  }
-}
