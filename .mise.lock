@@ -27,6 +27,10 @@ backend = "aqua:apple/pkl"
 version = "10.22.0"
 backend = "aqua:pnpm/pnpm"
 
+[[tools.ruby]]
+version = "3.4.7"
+backend = "core:ruby"
+
 [[tools.typos]]
 version = "1.39.2"
 backend = "aqua:crate-ci/typos"
