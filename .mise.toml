@@ -1,0 +1,8 @@
+[tools]
+hk = "latest"
+node = "22"
+pnpm = "latest"
+pkl = "latest"
+typos = "latest"
+go = "latest"
+"go:github.com/B1NARY-GR0UP/nwa" = "latest"

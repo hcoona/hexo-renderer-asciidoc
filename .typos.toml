@@ -1,0 +1,17 @@
+[default]
+# Project specific terms that should not be flagged.
+extend-ignore-re = [
+  "(?i)asciidoc",
+  "(?i)asciidoctor",
+  "(?i)hexo"
+]
+
+[files]
+extend-exclude = [
+  "pnpm-lock.yaml",
+  ".mise.lock",
+  "node_modules/**",
+  "coverage/**",
+  "dist/**",
+  ".pnpm-store/**"
+]

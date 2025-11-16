@@ -1,0 +1,102 @@
+// Copyright 2025 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+amends "package://github.com/jdx/hk/releases/download/v1.20.0/hk@1.20.0#/Config.pkl"
+import "package://github.com/jdx/hk/releases/download/v1.20.0/hk@1.20.0#/Builtins.pkl"
+
+import "./steps.pkl"
+
+local generated_files =
+  List(
+    ".mise.lock",
+    "pnpm-lock.yaml",
+  )
+
+local spec_kit_files =
+  List(
+    ".github/**",
+    ".specify/**",
+  )
+
+local markdown_globs =
+  List(
+    "*.md",
+    "*.mdx",
+    "*.markdown",
+  )
+
+local default_linters = new Mapping<String, Step> {
+  ["typos"] = (steps.typos) {
+    exclude = generated_files
+  }
+}
+
+local configuration_linters = new Mapping<String, Step> {
+  ["json-biome"] = (Builtins.biome) {
+    local json_files = List("*.json", "*.jsonc", "*.json5")
+    glob = json_files
+    stage = json_files
+    prefix = "pnpm exec --"
+  }
+}
+
+local documentation_linters = new Mapping<String, Step> {
+  ["markdownlint-cli2"] = (steps.markdownlint_cli2) {
+    prefix = "pnpm exec --"
+    exclude = spec_kit_files
+  }
+  ["markdown-prettier"] = (Builtins.prettier) {
+    glob = markdown_globs
+    stage = markdown_globs
+    exclude = spec_kit_files
+    prefix = "pnpm exec --"
+  }
+}
+
+local javascript_linters = new Mapping<String, Step> {
+  ["js-biome"] = (Builtins.biome) {
+    local js_files =
+      List(
+        "*.js",
+        "*.cjs",
+        "*.mjs",
+        "*.ts",
+        "*.tsx",
+        "*.jsx",
+        "*.cts",
+        "*.mts",
+      )
+    glob = js_files
+    stage = js_files
+    prefix = "pnpm exec --"
+  }
+}
+
+local pkl_linters = new Mapping<String, Step> {
+  ["pkl"] = Builtins.pkl
+  ["pkl-format"] = steps.pklFormat
+}
+
+local all_linters = new Mapping<String, Step> {
+  ...default_linters
+  ...configuration_linters
+  ...documentation_linters
+  ...pkl_linters
+}
+
+hooks {
+  ["pre-commit"] {
+    fix = false
+    steps = all_linters
+  }
+  ["pre-push"] {
+    steps = all_linters
+  }
+  ["fix"] {
+    fix = true
+    steps = all_linters
+  }
+  ["check"] {
+    steps = all_linters
+  }
+}

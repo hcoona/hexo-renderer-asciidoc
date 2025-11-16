@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/prettierrc.json",
+  "overrides": [
+    {
+      "files": ["*.md", "*.mdx", "*.markdown"],
+      "options": {
+        "printWidth": 90,
+        "proseWrap": "always",
+        "singleQuote": true,
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
