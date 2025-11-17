@@ -32,15 +32,14 @@ pnpm install
 hk install
 ```
 
-### JavaScript / TypeScript development
+### TypeScript development
 
-- The runtime codebase is still CommonJS (`index.js` + `lib/renderer.js`) so Hexo users do not need to migrate anything.
-- `tsconfig.json` enables `allowJs`, so you can gradually introduce `.ts` files inside the existing JavaScript folders.
-- If you want to author brand-new modules purely in TypeScript, place the sources under `src/` and run `pnpm build` to
-  transpile `.ts` to `dist/` for validation. `tsconfig.build.json` only processes `src/**/*.ts(x)`, so current JS
-  artifacts remain untouched.
-- `types/index.d.ts` provides minimal typings for the Hexo renderer, the global `hexo`, and `lib/renderer`, enabling IDE
-  completions and letting downstream consumers use this plugin from TypeScript projects.
+- Runtime sources now live entirely in `src/` (pure TypeScript). We still ship CommonJS so Hexo users do not have to
+  change anything—`tsdown` bundles the sources into `dist/` during `pnpm build`.
+- `pnpm build` runs `tsdown build`, generating both executable CJS (`dist/index.js`, `dist/lib/renderer.js`) and the
+  corresponding `.d.ts` files consumed by downstream projects.
+- `tsconfig.json` focuses on type safety only (`noEmit`); use `pnpm typecheck` to validate sources without touching the
+  compiled output.
 
 ```bash
 pnpm typecheck    # Type-check JS/TS sources without emitting files
@@ -74,7 +73,7 @@ hk fix             # Attempt auto-fixes for supported steps
 ### Release / npm publish preparation
 
 1. `pnpm typecheck && pnpm test` (add tests if needed for coverage).
-2. `pnpm run build` (if you added new `.ts` sources, this compiles CommonJS artifacts into `dist/`).
+2. `pnpm run build` (bundles `src/` via tsdown and refreshes the distributable in `dist/`).
 3. `pnpm publish` (the prepublish hook runs `pnpm build`, so CI can call `pnpm publish --access public` directly).
 
 ## License

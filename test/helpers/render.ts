@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-import renderer from '../../lib/renderer.js';
-import type { Renderer, RendererData, RendererLocals } from '../../types';
+import renderer from '../../src/lib/renderer';
+import type { Renderer, RendererData, RendererLocals } from '../../src/types';
 
 const render = renderer as Renderer;
 
