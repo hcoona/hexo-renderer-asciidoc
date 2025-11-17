@@ -42,6 +42,15 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
   `hexo-util` as a default export. The new bundle now consumes the named
   `highlight` export so `hexo-util.highlight` is always defined when Hexo
   renders code blocks.
+- Add `examples/hexo-site`, a fully configured Hexo blog that consumes the
+  local renderer via a `link:` dependency so contributors can test changes
+  without publishing to npm. The example keeps its own pnpm lockfile, enables
+  Hexo's stock highlighter, and documents the renderer defaults without adding
+  fictitious configuration flags.
+- Ship a dedicated `pnpm-workspace.yaml` inside the example so `pnpm install`
+  runs there instead of jumping back to the repository root. This keeps the
+  demo's dependencies isolated and prevents `hexo-util` regressions from stale
+  builds.
 
 ### Tooling & infrastructure
 

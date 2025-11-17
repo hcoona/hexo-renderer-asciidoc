@@ -1,0 +1,6 @@
+# Hexo build artefacts
+node_modules/
+public/
+db.json
+.deploy*/
+.generated/

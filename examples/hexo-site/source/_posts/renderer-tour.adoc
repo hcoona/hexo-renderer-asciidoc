@@ -1,0 +1,61 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+---
+title: Renderer pipeline tour
+date: 2025-11-17 12:05:00
+categories:
+  - demo
+tags:
+  - walkthrough
+---
+= Renderer pipeline tour
+:sectnums:
+
+Want to see what happens between your `.adoc` file and the HTML that lands in
+`public/`? This post follows the exact steps performed by this renderer.
+
+== Step 1 – Asciidoctor conversion
+
+The plugin bootstraps Asciidoctor once and reuses it for every render. Each
+call runs `convert()` with:
+
+* `doctype=article`
+* `safe=server`
+* `source-highlighter=html-pipeline`
+
+Those defaults match Hexo's static hosting assumptions while keeping dangerous
+macros disabled.
+
+== Step 2 – Static highlighting
+
+After Asciidoctor returns HTML, we pass every `<pre><code>` block through
+`hexo-util.highlight`. That keeps code fences visually consistent with the rest
+of the Hexo ecosystem even though the source language is AsciiDoc.
+
+[source,typescript]
+----
+import renderer from 'hexo-renderer-asciidoc';
+
+const html = renderer({ text: '== Sample ==' });
+// html already contains Hexo-flavoured <figure class="highlight"> wrappers
+----
+
+== Step 3 – Curly brace sanitisation
+
+Hexo themes (including the default `landscape`) use `pass:[{% helper %}]` syntax. To
+prevent fragment re-processing, we escape any literal `{` or `}` sequences that
+survive Asciidoctor. You can confirm this by viewing page source—the braces in
+inline code samples become HTML entities until Hexo finishes rendering.
+
+== Verifying the pipeline locally
+
+[source,bash]
+----
+pnpm generate
+xdg-open public/index.html
+----
+
+Inspect the resulting markup and you'll see the three stages above reflected
+verbatim. Adjust the renderer under `src/core/` and regenerate to watch the
+output evolve.

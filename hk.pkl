@@ -10,11 +10,12 @@ local generated_files =
   List(
     ".git/**",
     "coverage/**",
-    "dist/**",
-    "node_modules/**",
+    "examples/hexo-site/public/**",
+    "**/dist/**",
+    "**/node_modules/**",
     ".mise.lock",
     "Gemfile.lock",
-    "pnpm-lock.yaml",
+    "**/pnpm-lock.yaml",
   )
 
 local spec_kit_files =
@@ -35,7 +36,7 @@ local default_linters = new Mapping<String, Step> {
     exclude = generated_files
   }
   ["nwa"] = (steps.nwa) {
-    exclude = generated_files + List("*.json")
+    exclude = generated_files + List("**/*.json")
   }
 }
 

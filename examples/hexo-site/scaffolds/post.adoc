@@ -1,0 +1,23 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+---
+title: {{ title }}
+date: {{ date }}
+tags:
+---
+= {{ title }}
+:page-layout: post
+:toc: macro
+
+Write your AsciiDoc post here. Remove the sample sections below if you prefer a blank slate.
+
+== Introduction
+
+Replace this paragraph with your content. You can use standard AsciiDoc blocks, admonitions, callouts, tables, and more.
+
+== Checklist
+
+* Item 1
+* Item 2
+* Item 3

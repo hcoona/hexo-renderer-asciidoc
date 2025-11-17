@@ -1,0 +1,29 @@
+{
+  "name": "hexo-renderer-asciidoc-demo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Example Hexo site wired to the local hexo-renderer-asciidoc package",
+  "scripts": {
+    "clean": "hexo clean",
+    "dev": "hexo server",
+    "generate": "hexo generate",
+    "start": "hexo server",
+    "build": "hexo generate"
+  },
+  "dependencies": {
+    "hexo": "^8.1.1",
+    "hexo-generator-archive": "^2.0.0",
+    "hexo-generator-category": "^2.0.0",
+    "hexo-generator-index": "^4.0.0",
+    "hexo-generator-tag": "^2.0.0",
+    "hexo-renderer-asciidoc": "link:../..",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-stylus": "^3.0.1",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-minimalism": "^1.4.4"
+  },
+  "hexo": {
+    "version": "8.1.1"
+  },
+  "packageManager": "pnpm@10.22.0"
+}

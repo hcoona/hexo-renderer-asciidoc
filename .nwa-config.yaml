@@ -2,34 +2,32 @@
 # SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
 
 nwa:
-  holder: "Shuai Zhang"
-  year: "2015"
-  spdxids: "LGPL-3.0-or-later WITH LGPL-3.0-linking-exception"
+  holder: 'Shuai Zhang'
+  year: '2015'
+  spdxids: 'LGPL-3.0-or-later WITH LGPL-3.0-linking-exception'
   style:
-    - "adoc:line"
-    - "pkl:line"
+    - 'adoc:line'
+    - 'pkl:line'
 
   skip:
-    - ".git/**"
-    - "coverage/**"
-    - "dist/**"
-    - "LICENSES/**"
-    - "node_modules/**"
-    - ".mise.lock"
-    - "COPYING"
-    - "COPYING.LESSER"
-    - "Gemfile.lock"
-    - "LICENSE"
-    - "pnpm-lock.yaml"
-    - "**/*.snap"
+    - '.git/**'
+    - 'coverage/**'
+    - 'dist/**'
+    - 'examples/hexo-site/public/**'
+    - 'LICENSES/**'
+    - '**/node_modules/**'
+    - '.mise.lock'
+    - 'COPYING'
+    - 'COPYING.LESSER'
+    - 'Gemfile.lock'
+    - 'LICENSE'
+    - '**/pnpm-lock.yaml'
+    - '**/*.snap'
     # Unsupported file types
-    - "**/*.json"
-    - ".editorconfig"
-    - ".eslintignore"
-    - ".gitignore"
-    - ".jscsrc"
-    - ".npmignore"
-    - ".prettierignore"
-    - "**/.eslintrc"
+    - '**/*.json'
+    - '**/.editorconfig'
+    - '**/.gitignore'
+    - '.npmignore'
+    - '.prettierignore'
   path:
-    - "**"
+    - '**'

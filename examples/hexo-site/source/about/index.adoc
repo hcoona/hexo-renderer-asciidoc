@@ -1,0 +1,35 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+---
+title: About this demo
+date: 2025-11-17 12:10:00
+---
+= About this demo site
+
+This static page explains how the sample Hexo site consumes the renderer.
+
+== Goals
+
+* Showcase the `hexo-renderer-asciidoc` integration without publishing to npm.
+* Provide ready-to-edit `.adoc` sources for posts _and_ pages.
+* Demonstrate Hexo's default theme + highlight pipeline with zero extra tweaks.
+
+== How it works
+
+. `package.json` points `hexo-renderer-asciidoc` to the repository root via a
+  local `link:` dependency.
+. Run `pnpm install` **inside `examples/hexo-site`**. The example intentionally
+  stays out of the main pnpm workspace so it can pin its own Hexo toolchain.
+. Hexo discovers the renderer automatically and wires it as the handler for
+  `.ad`, `.adoc`, and `.asciidoc` files.
+
+== Customising
+
+The renderer currently ships a fixed Asciidoctor configuration (`doctype`
+`article`, `safe` `server`, `source-highlighter` `html-pipeline`). If you need
+different attributes, fork the package, tweak `src/core/asciidoctor.ts`, and
+publish or link your build the same way this example does.
+
+Need a different Hexo theme? Install it with `pnpm add <theme>` inside the
+example folder and update `_config.yml` accordingly.

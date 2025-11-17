@@ -1,0 +1,36 @@
+# Copyright 2015 Shuai Zhang
+# SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+title: Hexo + AsciiDoc demo
+subtitle: Example Hexo site for hexo-renderer-asciidoc
+description: >-
+  A tiny Hexo blog that renders every page from AsciiDoc sources using the
+  local hexo-renderer-asciidoc package.
+author: Hexo Renderer Maintainers
+language: en
+timezone: UTC
+
+url: http://localhost:4000
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults: {}
+
+source_dir: source
+public_dir: public
+theme: minimalism
+new_post_name: :title.adoc
+default_layout: post
+draft_dir: source/_drafts
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+
+highlight:
+  enable: true
+  # Hexo's built-in highlighter powers non-AsciiDoc assets; the renderer applies
+  # its own static highlighting to AsciiDoc posts after conversion.
+
+server:
+  host: 0.0.0.0
+  port: 4000
+  compress: true

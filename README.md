@@ -19,6 +19,29 @@ rendering engine.
 npm install hexo-renderer-asciidoc --save
 ```
 
+## Example Hexo site
+
+Want to test-drive the renderer without publishing to npm? A fully wired Hexo
+site lives under `examples/hexo-site`.
+
+```bash
+cd examples/hexo-site
+pnpm install
+pnpm dev
+```
+
+> [!TIP]
+> The example site is intentionally kept outside the root pnpm workspace.
+> Always run the commands above from inside `examples/hexo-site` so its Hexo
+> dependencies stay isolated from the main package.
+> That folder ships its own `pnpm-workspace.yaml` + lockfile to force pnpm to
+> stay local, so keep those helper files intact when copying the sample.
+
+The example site uses this repository via a local `link:` dependency, so any
+changes you make to the renderer are reflected immediately. Browse the `.adoc`
+sources under `examples/hexo-site/source/` to see how admonitions, callouts,
+syntax highlighting, and other features behave end-to-end.
+
 ## Development
 
 ### Toolchain bootstrap

@@ -1,0 +1,75 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+---
+title: Meet hexo-renderer-asciidoc
+date: 2025-11-17 12:00:00
+categories:
+  - demo
+tags:
+  - introduction
+  - asciidoc
+---
+= Meet `hexo-renderer-asciidoc`
+:toc: macro
+
+This demo blog exists to showcase how the renderer plugs AsciiDoc into Hexo 8.
+Every page you are reading—including this one—is rendered by the exact same
+code that ships to npm.
+
+== Why this renderer
+
+* Converts `.ad`, `.adoc`, and `.asciidoc` sources with Asciidoctor 3.0.4 using
+  `doctype=article` and `safe=server`.
+* Re-runs Hexo's static syntax highlighter so code blocks look identical to the
+  Markdown pipeline.
+* Escapes `{` / `}` pairs before returning HTML to Hexo, preventing theme
+  helpers from misinterpreting template expressions.
+
+== How to wire it into your site
+
+. Add the dependency inside your Hexo project:
++
+[source,bash]
+----
+pnpm add hexo-renderer-asciidoc
+----
+. Restart Hexo. The framework auto-discovers renderers and routes the supported
+   extensions through this package—no extra configuration necessary.
+. Keep your posts under `source/_posts/*.adoc` and Hexo will take care of the
+   rest.
+
+== What this example proves
+
+This repository depends on `hexo-renderer-asciidoc` via a local `link:` dependency.
+When you run the commands below inside `examples/hexo-site`, Hexo executes the
+fresh TypeScript build from the monorepo root, so you can iterate on the
+renderer and the demo simultaneously.
+
+[source,bash]
+----
+pnpm install
+pnpm dev
+----
+
+Open <http://localhost:4000> and inspect the generated HTML via the browser dev
+tools—you will see that the renderer already ships pre-highlighted code blocks
+and sanitized markup.
+
+== Key defaults to remember
+
+|===
+| Setting | Value used by this renderer
+
+| Safe mode
+| `server`
+
+| Doctype
+| `article`
+
+| Source highlighter
+| `html-pipeline` + Hexo's `hexo-util.highlight`
+|===
+
+Need a different behaviour? Fork the renderer, tweak `src/core/asciidoctor.ts`,
+and re-run `pnpm build` before pointing your Hexo site to the new bundle.
