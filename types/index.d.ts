@@ -1,3 +1,8 @@
+/**
+ * Copyright 2015 Shuai Zhang
+ * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+ */
+
 declare namespace HexoRendererAsciidoc {
   interface RendererData {
     /** Absolute or relative path to the file being rendered, if available. */

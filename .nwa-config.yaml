@@ -1,0 +1,32 @@
+# Copyright 2015 Shuai Zhang
+# SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+nwa:
+  holder: "Shuai Zhang"
+  year: "2015"
+  spdxids: "LGPL-3.0-or-later WITH LGPL-3.0-linking-exception"
+  style:
+    - "pkl:line"
+
+  skip:
+    - ".git/**"
+    - "dist/**"
+    - "LICENSES/**"
+    - "node_modules/**"
+    - ".mise.lock"
+    - "COPYING"
+    - "COPYING.LESSER"
+    - "Gemfile.lock"
+    - "LICENSE"
+    - "pnpm-lock.yaml"
+    # Unsupported file types
+    - "**/*.json"
+    - ".editorconfig"
+    - ".eslintignore"
+    - ".gitignore"
+    - ".jscsrc"
+    - ".npmignore"
+    - ".prettierignore"
+    - "**/.eslintrc"
+  path:
+    - "**"

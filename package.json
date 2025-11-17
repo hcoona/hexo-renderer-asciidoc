@@ -36,7 +36,7 @@
     "asciidoc"
   ],
   "author": "Zhang Shuai",
-  "license": "ISC",
+  "license": "LGPL-3.0-or-later WITH LGPL-3.0-linking-exception",
   "bugs": {
     "url": "https://github.com/hcoona/hexo-renderer-asciidoc/issues"
   },
