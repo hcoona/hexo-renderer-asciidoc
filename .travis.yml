@@ -20,7 +20,7 @@ install:
   - pnpm install
 
 node_js:
-  - "lts/*"
+  - 'lts/*'
 
 script:
   - pnpm run lint

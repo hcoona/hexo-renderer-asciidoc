@@ -1,9 +1,0 @@
-# Generated artifacts
-node_modules
-pnpm-lock.yaml
-.mise.lock
-coverage
-.nyc_output
-dist
-.build
-.tmp

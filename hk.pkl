@@ -77,6 +77,13 @@ local javascript_linters = new Mapping<String, Step> {
     stage = js_files
     prefix = "pnpm exec --"
   }
+  ["yaml-prettier"] = (Builtins.prettier) {
+    local yaml_files = List("*.yaml", "*.yml")
+    glob = yaml_files
+    stage = yaml_files
+    exclude = generated_files
+    prefix = "pnpm exec --"
+  }
 }
 
 local pkl_linters = new Mapping<String, Step> {
