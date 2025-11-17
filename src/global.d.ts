@@ -8,5 +8,3 @@ import type { Hexo } from './types';
 declare global {
   const hexo: Hexo;
 }
-
-export {};

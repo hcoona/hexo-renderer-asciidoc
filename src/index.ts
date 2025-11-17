@@ -3,20 +3,18 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-import renderer from './lib/renderer';
-import type { Hexo } from './types';
+import { createRenderer, registerAsciidocRenderer } from './hexo/registerRenderer';
 
-const registerRenderer = (instance: Hexo): void => {
-  instance.extend.renderer.register('ad', 'html', renderer, true);
-  instance.extend.renderer.register('adoc', 'html', renderer, true);
-  instance.extend.renderer.register('asciidoc', 'html', renderer, true);
-};
-
+// Auto-register if hexo global is available (backwards compatibility)
 if (typeof hexo !== 'undefined' && hexo?.extend?.renderer) {
-  registerRenderer(hexo);
+  registerAsciidocRenderer(hexo);
 }
 
-export { registerRenderer, renderer };
+// Export for programmatic use
+export { registerAsciidocRenderer, createRenderer };
+export type { AsciidocOptions, Renderer, RendererData, RendererLocals } from './core/types';
 export type { Hexo } from './types';
-export type { Renderer, RendererData, RendererLocals } from './types';
+
+// Default export for CommonJS compatibility
+const renderer = createRenderer();
 export default renderer;

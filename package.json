@@ -11,23 +11,25 @@
     "ChangeLog.md"
   ],
   "scripts": {
+    "prepare": "pnpm build",
     "prepack": "node scripts/npm-readme.cjs prepack",
     "postpack": "node scripts/npm-readme.cjs postpack",
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test-cov": "vitest run --coverage",
     "lint": "pnpm run lint:biome && pnpm run lint:md",
     "lint:biome": "pnpm exec biome lint --reporter summary .",
     "lint:md": "pnpm exec prettier --check \"**/*.{md,mdx,markdown}\"",
     "format": "pnpm run format:biome && pnpm run format:md",
     "format:biome": "pnpm exec biome format .",
     "format:md": "pnpm exec prettier --write \"**/*.{md,mdx,markdown}\"",
+    "check": "biome check .",
     "hooks:install": "hk install",
     "hooks:check": "hk check",
     "hooks:fix": "hk fix",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
-    "build": "tsdown",
-    "prepublishOnly": "pnpm run build",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test-cov": "vitest run --coverage"
+    "prepublishOnly": "pnpm build && pnpm test && pnpm check"
   },
   "repository": {
     "type": "git",
@@ -44,7 +46,7 @@
   },
   "homepage": "https://github.com/hcoona/hexo-renderer-asciidoc",
   "engines": {
-    "node": ">=20.19.0"
+    "node": ">=20.0.0"
   },
   "peerDependencies": {
     "hexo": ">=8.0.0"
@@ -73,5 +75,5 @@
       "import": "./dist/index.js"
     }
   },
-  "packageManager": "pnpm@10.22.0"
+  "packageManager": "pnpm@9.0.0"
 }

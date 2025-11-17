@@ -3,7 +3,7 @@
 
 [tools]
 hk = "latest"
-node = "22"
+node = "24"
 pnpm = "latest"
 pkl = "latest"
 typos = "latest"

@@ -4,23 +4,23 @@
  */
 
 const config = {
-    semi: true,
-    trailingComma: 'all',
-    singleQuote: true,
-    printWidth: 120,
-    tabWidth: 2,
-    useTabs: false,
-    endOfLine: 'lf',
+  semi: true,
+  trailingComma: 'all',
+  singleQuote: true,
+  printWidth: 120,
+  tabWidth: 2,
+  useTabs: false,
+  endOfLine: 'lf',
 
-    // Override for specific file types
-    overrides: [
-        {
-            files: '*.md',
-            options: {
-                proseWrap: 'preserve',
-            },
-        },
-    ],
+  // Override for specific file types
+  overrides: [
+    {
+      files: '*.md',
+      options: {
+        proseWrap: 'preserve',
+      },
+    },
+  ],
 };
 
 export default config;

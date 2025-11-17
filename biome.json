@@ -15,7 +15,7 @@
     "indentStyle": "space",
     "indentWidth": 2,
     "lineEnding": "lf",
-    "lineWidth": 120
+    "lineWidth": 100
   },
   "assist": {
     "actions": {
@@ -64,7 +64,17 @@
     }
   },
   "javascript": {
-    "globals": ["node", "vitest", "hexo", "describe", "it", "before", "after", "beforeEach", "afterEach"],
+    "globals": [
+      "node",
+      "vitest",
+      "hexo",
+      "describe",
+      "it",
+      "before",
+      "after",
+      "beforeEach",
+      "afterEach"
+    ],
     "formatter": {
       "quoteStyle": "single",
       "semicolons": "always",

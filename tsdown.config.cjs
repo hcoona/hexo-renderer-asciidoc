@@ -14,5 +14,5 @@ module.exports = defineConfig({
   outDir: 'dist',
   clean: true,
   external: ['asciidoctor', 'cheerio', 'entities', 'hexo-util'],
-  fixedExtension: false
+  fixedExtension: false,
 });

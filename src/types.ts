@@ -3,21 +3,18 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-export interface RendererData {
-  /** Absolute or relative path to the file being rendered, if available. */
-  path?: string | null;
-  /** Raw AsciiDoc content provided by Hexo. */
-  text: string;
-}
+import type { Renderer } from './core/types';
 
-export type RendererLocals = Record<string, unknown>;
-
-export type Renderer = (data: RendererData, locals?: RendererLocals) => string;
-
+/**
+ * Hexo renderer extension interface
+ */
 export interface RendererExtension {
   register(name: string, output: string, fn: Renderer, sync?: boolean): void;
 }
 
+/**
+ * Hexo instance interface
+ */
 export interface Hexo {
   extend: {
     renderer: RendererExtension;

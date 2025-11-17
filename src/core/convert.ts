@@ -4,10 +4,10 @@
  */
 
 import asciidoctorFactory from 'asciidoctor';
-import { decodeXML } from 'entities';
 import * as cheerio from 'cheerio';
+import { decodeXML } from 'entities';
 import hexoUtil from 'hexo-util';
-import type { Renderer } from '../types';
+import type { AsciidocOptions } from './types';
 
 const asciidoctor = asciidoctorFactory();
 
@@ -22,23 +22,27 @@ const highlightOptions: HighlightOptions = {
   autoDetect: false,
   lang: 'plaintext',
   gutter: false,
-  wrap: false
+  wrap: false,
 };
 
 const cheerioLoadOptions = {
-  decodeEntities: false
+  decodeEntities: false,
 };
 
-const asciidocOptions = {
-  doctype: 'article',
-  safe: 'server',
-  attributes: ['source-highlighter=html-pipeline']
-} as const;
+/**
+ * Convert AsciiDoc source to HTML
+ * @param source AsciiDoc source text
+ * @param options Asciidoctor options
+ * @returns Rendered HTML string
+ */
+export function convertAsciidoc(source: string, options: AsciidocOptions): string {
+  // Convert AsciiDoc to HTML using Asciidoctor
+  const html = asciidoctor.convert(source, options) as string;
 
-const asciidoctorRenderer: Renderer = (data) => {
-  const html = asciidoctor.convert(data.text, asciidocOptions) as string;
+  // Load HTML with cheerio for processing
   const $ = cheerio.load(html, cheerioLoadOptions);
 
+  // Process code blocks with Hexo's syntax highlighter
   $('pre.highlight').each((_index: number, elem: cheerio.Element) => {
     if (elem.type !== 'tag') {
       return;
@@ -57,7 +61,6 @@ const asciidoctorRenderer: Renderer = (data) => {
     $(elem).replaceWith(content);
   });
 
+  // Escape curly braces to prevent Hexo template conflicts
   return $.html().replace(/{/g, '&#123;').replace(/}/g, '&#125;');
-};
-
-export default asciidoctorRenderer;
+}

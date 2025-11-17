@@ -1,0 +1,15 @@
+/**
+ * Copyright 2015 Shuai Zhang
+ * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+ */
+
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": ["src/__tests__/**/*", "**/*.spec.ts", "**/*.test.ts", "dist", "node_modules"]
+}

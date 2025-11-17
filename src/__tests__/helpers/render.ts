@@ -3,10 +3,10 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-import renderer from '../../src/lib/renderer';
-import type { Renderer, RendererData, RendererLocals } from '../../src/types';
+import type { Renderer, RendererData, RendererLocals } from '../../core/types';
+import { createRenderer } from '../../hexo/registerRenderer';
 
-const render = renderer as Renderer;
+const render = createRenderer() as Renderer;
 
 export const renderAsciiDoc = (text: string, locals: RendererLocals = {}): string => {
   const data: RendererData = { text };

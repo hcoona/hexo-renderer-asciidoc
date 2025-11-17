@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-import { describe, expect, it } from 'vitest';
 import * as entities from 'entities';
+import { describe, expect, it } from 'vitest';
 import { renderAsciiDoc } from './helpers/render';
 
 describe('Asciidoc renderer', () => {
@@ -34,7 +34,8 @@ end
 ----`;
     const result = renderAsciiDoc(body);
 
-    expect(entities.decodeHTML(result)).toEqual(entities.decodeHTML(`<div class="listingblock">
+    expect(entities.decodeHTML(result)).toEqual(
+      entities.decodeHTML(`<div class="listingblock">
 <div class="content">
 <pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">'sinatra'</span>
 
@@ -42,6 +43,7 @@ get <span class="string">'/hi'</span> <span class="keyword">do</span>
   <span class="string">"Hello World!"</span>
 <span class="keyword">end</span></code></pre>
 </div>
-</div>`));
+</div>`),
+    );
   });
 });
