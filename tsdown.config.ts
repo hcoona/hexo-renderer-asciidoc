@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-const { defineConfig } = require('tsdown');
+import { defineConfig } from 'tsdown';
 
-module.exports = defineConfig({
+export default defineConfig({
   entry: ['src/index.ts'],
   format: 'cjs',
   dts: true,
@@ -14,5 +14,5 @@ module.exports = defineConfig({
   outDir: 'dist',
   clean: true,
   external: ['asciidoctor', 'cheerio', 'entities', 'hexo-util'],
-  fixedExtension: false
+  fixedExtension: false,
 });

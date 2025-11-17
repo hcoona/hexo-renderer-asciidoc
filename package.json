@@ -2,7 +2,7 @@
   "name": "hexo-renderer-asciidoc",
   "version": "3.0.0-dev.1",
   "description": "Asciidoc renderer plugin for hexo",
-  "type": "commonjs",
+  "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
