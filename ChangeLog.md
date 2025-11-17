@@ -38,6 +38,9 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
   (`registerRenderer`, `renderer` export).
 - Continue to use Asciidoctor 3.x and Hexo's `hexo-util.highlight` for
   syntax highlighting, matching the behaviour introduced in 2.x.
+- Upgrade `hexo-util` to `^4.0.0` to pick up the latest highlight fixes,
+  including support for custom Highlight.js languages and safer URL encoding
+  in `encodeURL`.
 - Fix a regression introduced by the TypeScript build that imported
   `hexo-util` as a default export. The new bundle now consumes the named
   `highlight` export so `hexo-util.highlight` is always defined when Hexo

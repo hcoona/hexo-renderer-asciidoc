@@ -53,7 +53,7 @@
     "asciidoctor": "3.0.4",
     "cheerio": "0.22.0",
     "entities": "^4.5.0",
-    "hexo-util": "3.3.0"
+    "hexo-util": "^4.0.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.5",
