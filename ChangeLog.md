@@ -12,11 +12,11 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
 > [!NOTE]
 > Dates use the `YYYY-MM-DD` format and releases are listed from newest to oldest.
 
-## [2.3.0-dev.1] - 2025-11-16
+## [3.0.0-dev.1] - 2025-11-17
 
 > [!WARNING]
 > This is a development pre-release built from the `main` branch.
-> Behaviour may still change before a stable 2.3.0 / 3.0.0 release.
+> Behaviour may still change before a stable 3.0.0 release.
 >
 > This build also **drops support for Node.js versions lower than 20.19.0**
 > and changes the project license. Treat it as a breaking change if you rely
