@@ -18,3 +18,10 @@ extend-exclude = [
   "dist/**",
   ".pnpm-store/**"
 ]
+
+[type.changelog]
+extend-glob = ["ChangeLog.md"]
+extend-ignore-re = [
+  # Ignore short git commit SHAs that appear in inline code, e.g. `daa954f`.
+  "`[0-9a-f]{7,10}`"
+]
