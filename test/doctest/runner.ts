@@ -71,6 +71,12 @@ const parseExamples = (source: string): DocTestExample[] => {
   return examples;
 };
 
+/**
+ * Load doctest fixtures for a given group and register Vitest snapshot cases for each example.
+ *
+ * @param group - Fixture group name (maps to `<group>.adoc`).
+ * @returns void
+ */
 export const registerDocTestGroup = (group: string): void => {
   const filePath = path.join(fixturesDir, `${group}.adoc`);
   const source = readFileSync(filePath, 'utf8');

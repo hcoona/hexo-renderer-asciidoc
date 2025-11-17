@@ -59,6 +59,10 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
 - Remove unused files and dependencies, and ignore coverage and snapshot
   files when checking license headers (commits `976ef5f`, `7a816ab`,
   `2d50554`, `45aef8c`, `7abe293`).
+- Restructure the runtime sources to follow the 2025 Node LTS + pnpm + Biome +
+  TypeScript blueprint: the pure renderer now lives under `src/core/`, Hexo
+  integration logic under `src/hexo/`, and `src/lib/renderer.ts` became a thin
+  compatibility shim.
 
 ### Migration notes
 

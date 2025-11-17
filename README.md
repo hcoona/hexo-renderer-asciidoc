@@ -46,6 +46,17 @@ pnpm typecheck    # Type-check JS/TS sources without emitting files
 pnpm build        # Build TypeScript in src/ into dist/
 ```
 
+### Source layout
+
+The renderer now mirrors the modernization blueprint shared earlier:
+
+- `src/core/` keeps the pure rendering pipeline (Asciidoctor bootstrapping, static highlighting, and HTML sanitisation).
+- `src/hexo/` contains the Hexo-only wiring logic (`registerRenderer`) so framework glue stays isolated from core logic.
+- `src/lib/renderer.ts` is a thin compatibility shim that re-exports the new core renderer to keep older imports working.
+
+This separation keeps pure functions testable without Hexo, while the Hexo adapter simply registers the shared renderer
+for `.ad`, `.adoc`, and `.asciidoc` inputs.
+
 ### Testing
 
 Vitest now drives the renderer regression suite. The scripts mirror the old Mocha workflow but with faster watch and

@@ -9,4 +9,5 @@ declare global {
   const hexo: Hexo;
 }
 
+// biome-ignore lint/complexity/noUselessEmptyExport: mark file as a module for the global augmentation above.
 export {};
