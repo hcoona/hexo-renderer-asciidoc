@@ -22,7 +22,7 @@
     "hooks:install": "hk install",
     "hooks:check": "hk check",
     "hooks:fix": "hk fix",
-    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck": "tsc",
     "build": "tsdown",
     "prepublishOnly": "pnpm run build",
     "test": "vitest run",

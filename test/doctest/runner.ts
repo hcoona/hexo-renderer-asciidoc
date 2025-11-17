@@ -33,7 +33,12 @@ const parseExamples = (source: string): DocTestExample[] => {
       return;
     }
 
-    while (bodyLines.length > 0 && bodyLines[bodyLines.length - 1].trim() === '') {
+    while (bodyLines.length > 0) {
+      const lastLine = bodyLines.at(-1);
+      if (lastLine === undefined || lastLine.trim() !== '') {
+        break;
+      }
+
       bodyLines.pop();
     }
 
