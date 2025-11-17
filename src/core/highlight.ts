@@ -5,7 +5,7 @@
 
 import * as cheerio from 'cheerio';
 import { decodeXML } from 'entities';
-import hexoUtil from 'hexo-util';
+import { highlight as highlightCode } from 'hexo-util';
 
 const CHEERIO_LOAD_OPTIONS: cheerio.CheerioParserOptions = Object.freeze({
   decodeEntities: false,
@@ -56,7 +56,7 @@ export const applyStaticHighlighting = (html: string): string => {
     const lang = toHighlightLanguage(codeNode.attribs?.['data-lang']);
     const sourceCodeText = decodeXML($(codeNode).text());
     const highlightOptions = { ...BASE_HIGHLIGHT_OPTIONS, lang };
-    const rendered = hexoUtil.highlight(sourceCodeText, highlightOptions);
+    const rendered = highlightCode(sourceCodeText, highlightOptions);
 
     $(element).replaceWith(rendered);
   });
