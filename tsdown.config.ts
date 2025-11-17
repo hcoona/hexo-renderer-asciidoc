@@ -6,13 +6,9 @@
 import { defineConfig } from 'tsdown';
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: 'src/index.ts',
   format: 'cjs',
-  dts: true,
-  sourcemap: true,
-  target: 'node20',
-  outDir: 'dist',
-  clean: true,
-  external: ['asciidoctor', 'cheerio', 'entities', 'hexo-util'],
-  fixedExtension: false,
+  dts: {
+    sourcemap: true,
+  },
 });

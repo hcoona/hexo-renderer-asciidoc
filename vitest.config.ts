@@ -3,16 +3,18 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-import { defineConfig } from 'vitest/config';
+import { defineConfig, type ViteUserConfigExport } from 'vitest/config';
 
-export default defineConfig({
+const vitestConfig: ViteUserConfigExport = defineConfig({
   test: {
     include: ['test/**/*.test.{js,mjs,ts}'],
     environment: 'node',
     coverage: {
       provider: 'v8',
       reporter: ['text', 'lcov'],
-      reportsDirectory: './coverage'
-    }
-  }
+      reportsDirectory: './coverage',
+    },
+  },
 });
+
+export default vitestConfig;

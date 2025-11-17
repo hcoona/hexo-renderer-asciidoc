@@ -20,7 +20,7 @@ const DEFAULT_OPTIONS = Object.freeze({
  * Canonical Asciidoctor options used when callers do not supply overrides.
  * Exposed mainly for testing and advanced customization.
  */
-export const ASCIIDOCTOR_DEFAULT_OPTIONS = DEFAULT_OPTIONS;
+export const ASCIIDOCTOR_DEFAULT_OPTIONS: AsciiDocOptions = DEFAULT_OPTIONS;
 
 /**
  * Convert a chunk of AsciiDoc text into HTML using the shared Asciidoctor instance.
