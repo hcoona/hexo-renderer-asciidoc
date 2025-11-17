@@ -1,0 +1,83 @@
+= Hello AsciiDoc
+:author: Demo Author
+:date: 2025-11-17
+:tags: asciidoc, hexo, example
+:categories: demo
+
+== Introduction
+
+This is a sample blog post written in *AsciiDoc* format!
+
+AsciiDoc is a lightweight and semantic markup language designed for writing technical documentation. It can be used to write:
+
+* Documentation
+* Blog posts
+* Books
+* Man pages
+* And much more!
+
+== Features
+
+=== Syntax Highlighting
+
+Here's a code example with syntax highlighting:
+
+[source,javascript]
+----
+function greet(name) {
+  console.log(`Hello, ${name}!`);
+}
+
+greet('World');
+----
+
+=== Lists
+
+Unordered list:
+
+* First item
+* Second item
+** Nested item
+** Another nested item
+* Third item
+
+Ordered list:
+
+. Step one
+. Step two
+. Step three
+
+=== Admonitions
+
+NOTE: This is a note block.
+
+TIP: This is a tip for best practices.
+
+IMPORTANT: Pay attention to this important information.
+
+WARNING: This is a warning about potential issues.
+
+CAUTION: Be careful with this!
+
+=== Tables
+
+.Sample Data
+|===
+|Name |Language |Purpose
+
+|Hexo
+|JavaScript
+|Static site generator
+
+|AsciiDoc
+|Markup
+|Documentation format
+
+|Asciidoctor
+|Ruby/JS
+|AsciiDoc processor
+|===
+
+== Conclusion
+
+The `hexo-renderer-asciidoc` plugin makes it easy to write blog posts in AsciiDoc format for your Hexo site!

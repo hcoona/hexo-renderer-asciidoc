@@ -1,0 +1,95 @@
+= Advanced AsciiDoc Features
+:author: Demo Author
+:date: 2025-11-17
+:toc: left
+:toclevels: 3
+:tags: asciidoc, advanced
+:categories: tutorial
+
+[abstract]
+This post demonstrates more advanced AsciiDoc features supported by the hexo-renderer-asciidoc plugin.
+
+== Cross References
+
+You can create <<internal-links,internal links>> within your document.
+
+[[internal-links]]
+== Internal Links
+
+This section can be referenced from anywhere in the document using its anchor.
+
+== Images and Media
+
+=== Images
+
+You can embed images using the image macro:
+
+image::https://via.placeholder.com/600x200.png?text=Sample+Image[Sample Image, 600, 200]
+
+Inline images work too: image:https://via.placeholder.com/20.png[icon,20,20] like this.
+
+== Math Support
+
+When configured with the stem attribute, you can include mathematical formulas:
+
+stem:[sqrt(4) = 2]
+
+Block equations:
+
+[stem]
+++++
+sqrt(4) = 2
+++++
+
+== Callouts and Code Annotations
+
+Source code with callouts:
+
+[source,python]
+----
+def fibonacci(n):
+    if n <= 1:
+        return n  # <1>
+    return fibonacci(n-1) + fibonacci(n-2)  # <2>
+
+print(fibonacci(10))
+----
+<1> Base case: return n when n is 0 or 1
+<2> Recursive case: sum of previous two numbers
+
+== Quote Blocks
+
+[quote, Albert Einstein]
+____
+Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.
+____
+
+== Sidebar Content
+
+.Related Information
+****
+This is a sidebar that provides supplementary information without interrupting the main flow of the document.
+
+You can include:
+
+* Links to related articles
+* Definitions
+* Examples
+* Tips and tricks
+****
+
+== Keyboard Shortcuts
+
+Press kbd:[Ctrl+C] to copy and kbd:[Ctrl+V] to paste.
+
+The keyboard shortcut for save is kbd:[Ctrl+S] on Windows or kbd:[Cmd+S] on Mac.
+
+== UI Elements
+
+Click on the btn:[Save] button to save your work.
+
+Navigate to menu:File[Open > Recent Files] to access recently opened documents.
+
+== Conclusion
+
+The hexo-renderer-asciidoc plugin supports a rich set of AsciiDoc features, making it perfect for technical documentation and feature-rich blog posts.

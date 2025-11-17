@@ -269,3 +269,10 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/git,vim,node,linux,macos,windows,visualstudiocode
 
 /coverage/
+
+# Example site artifacts
+examples/*/node_modules/
+examples/*/public/
+examples/*/db.json
+examples/*/.deploy_git/
+examples/*/pnpm-lock.yaml

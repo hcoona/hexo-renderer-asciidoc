@@ -32,14 +32,31 @@ pnpm install
 hk install
 ```
 
+### Project Structure
+
+The project follows a clean architecture with separation of concerns:
+
+```
+src/
+├── core/              # Pure business logic (no Hexo dependencies)
+│   ├── types.ts       # Core type definitions
+│   ├── options.ts     # Configuration normalization
+│   └── convert.ts     # AsciiDoc → HTML conversion
+├── hexo/              # Hexo integration layer
+│   └── registerRenderer.ts  # Hexo adapter
+├── __tests__/         # Collocated tests
+└── index.ts           # Main entry point
+```
+
 ### TypeScript development
 
 - Runtime sources now live entirely in `src/` (pure TypeScript). We still ship CommonJS so Hexo users do not have to
   change anything—`tsdown` bundles the sources into `dist/` during `pnpm build`.
-- `pnpm build` runs `tsdown build`, generating both executable CJS (`dist/index.js`, `dist/lib/renderer.js`) and the
-  corresponding `.d.ts` files consumed by downstream projects.
+- `pnpm build` runs `tsdown build`, generating both executable CJS (`dist/index.js`) and the corresponding `.d.ts` files
+  consumed by downstream projects.
 - `tsconfig.json` focuses on type safety only (`noEmit`); use `pnpm typecheck` to validate sources without touching the
   compiled output.
+- `tsconfig.build.json` is used by the build process to exclude tests.
 
 ```bash
 pnpm typecheck    # Type-check JS/TS sources without emitting files
@@ -48,14 +65,26 @@ pnpm build        # Build TypeScript in src/ into dist/
 
 ### Testing
 
-Vitest now drives the renderer regression suite. The scripts mirror the old Mocha workflow but with faster watch and
-first-class coverage support.
+Vitest drives the renderer test suite with fast watch mode and first-class coverage support. Tests are collocated with
+source code in `src/__tests__/`.
 
 ```bash
 pnpm test        # Run Vitest once in CI mode
 pnpm test:watch  # Watch files and re-run the impacted tests
 pnpm test-cov    # Produce text + lcov coverage via V8 instrumentation
 ```
+
+### Example Site
+
+A working example Hexo site is available in `examples/basic-hexo-site/` to demonstrate the plugin in action:
+
+```bash
+cd examples/basic-hexo-site
+pnpm install
+pnpm run server  # Start Hexo server on http://localhost:4000
+```
+
+The example includes sample AsciiDoc posts showcasing various features.
 
 ### Linting and formatting
 

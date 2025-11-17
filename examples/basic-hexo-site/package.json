@@ -1,0 +1,24 @@
+{
+  "name": "basic-hexo-site",
+  "version": "1.0.0",
+  "description": "Example Hexo site with AsciiDoc renderer",
+  "private": true,
+  "scripts": {
+    "clean": "hexo clean",
+    "generate": "hexo generate",
+    "server": "hexo server",
+    "build": "hexo clean && hexo generate"
+  },
+  "keywords": [
+    "hexo",
+    "asciidoc",
+    "example"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "hexo": "^8.1.1",
+    "hexo-renderer-asciidoc": "file:../..",
+    "hexo-theme-landscape": "^1.0.0"
+  }
+}
