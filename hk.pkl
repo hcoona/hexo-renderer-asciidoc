@@ -9,6 +9,7 @@ import "./steps.pkl"
 local generated_files =
   List(
     ".git/**",
+    "coverage/**",
     "dist/**",
     "node_modules/**",
     ".mise.lock",
