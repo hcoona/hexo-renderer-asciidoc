@@ -3,12 +3,22 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
+import type { CheerioOptions } from 'cheerio';
 import * as cheerio from 'cheerio';
 import { decodeXML } from 'entities';
 import { highlight as highlightCode } from 'hexo-util';
 
-const CHEERIO_LOAD_OPTIONS: cheerio.CheerioParserOptions = Object.freeze({
-  decodeEntities: false,
+const CHEERIO_LOAD_OPTIONS: CheerioOptions = Object.freeze({
+  // Cheerio 1 defaults to parse5, which eagerly decodes entities using HTML
+  // rules. That destroys strings like `&amp;notit;` by resolving them into
+  // partial entities (e.g., `¬it;`). We therefore force the htmlparser2 path
+  // and keep entity decoding disabled so that we can read the exact escaped
+  // payload from Asciidoctor and run `decodeXML` (with XML rules) ourselves
+  // before handing the plain code to Hexo's highlighter.
+  xml: {
+    xmlMode: false,
+    decodeEntities: false,
+  },
 });
 
 const DEFAULT_LANGUAGE = 'plaintext';
