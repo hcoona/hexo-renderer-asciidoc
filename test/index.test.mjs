@@ -3,21 +3,18 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-'use strict';
-
-const entities = require('entities');
-require('chai').should();
+import { describe, it, expect } from 'vitest';
+import * as entities from 'entities';
+import render from '../lib/renderer.js';
 
 describe('Asciidoc renderer', () => {
-  const r = require('../lib/renderer');
-
   it('header', () => {
     const body = `
 == Test H2 ==
 `;
-    const result = r({ text: body }, {});
+    const result = render({ text: body }, {});
 
-    result.should.eql(`<div class="sect1">
+    expect(result).toEqual(`<div class="sect1">
 <h2 id="_test_h2">Test H2</h2>
 <div class="sectionbody">
 
@@ -35,9 +32,9 @@ get '/hi' do
   "Hello World!"
 end
 ----`;
-    const result = r({ text: body }, {});
+    const result = render({ text: body }, {});
 
-    entities.decodeHTML(result).should.eql(entities.decodeHTML(`<div class="listingblock">
+    expect(entities.decodeHTML(result)).toEqual(entities.decodeHTML(`<div class="listingblock">
 <div class="content">
 <pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">'sinatra'</span>
 

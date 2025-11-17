@@ -47,6 +47,17 @@ pnpm typecheck    # Type-check JS/TS sources without emitting files
 pnpm build        # Build TypeScript in src/ into dist/
 ```
 
+### Testing
+
+Vitest now drives the renderer regression suite. The scripts mirror the old Mocha workflow but with faster watch and
+first-class coverage support.
+
+```bash
+pnpm test        # Run Vitest once in CI mode
+pnpm test:watch  # Watch files and re-run the impacted tests
+pnpm test-cov    # Produce text + lcov coverage via V8 instrumentation
+```
+
 ### Linting and formatting
 
 Biome takes care of JS/TS/JSON (the `js-biome` and `json-biome` HK steps cover
