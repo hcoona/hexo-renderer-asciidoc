@@ -17,6 +17,7 @@ const npmReadmePath = path.join(rootDir, 'README.npm.md');
 // Use a dot-prefixed backup file name so that it is not auto-included by npm
 // (which eagerly includes any top-level README* files in the tarball).
 const backupPath = path.join(rootDir, '.README.md.npm-backup');
+const hiddenNpmReadmePath = path.join(rootDir, '.README.npm.md.npm-backup');
 
 /**
  * Simple logger with prefix so it is easy to spot in npm output.
@@ -43,6 +44,14 @@ function handlePrepack() {
     return;
   }
 
+  if (fs.existsSync(hiddenNpmReadmePath)) {
+    logError(
+      'Hidden README.npm.md backup already exists. Please restore it (rename .README.npm.md.npm-backup back to README.npm.md) before packing.',
+    );
+    process.exitCode = 1;
+    return;
+  }
+
   if (fs.existsSync(backupPath)) {
     logError(
       'Backup file already exists. Aborting to avoid overwriting it. Please check README.md and remove .README.md.npm-backup if everything looks fine.',
@@ -55,8 +64,9 @@ function handlePrepack() {
     fs.copyFileSync(readmePath, backupPath);
   }
 
-  fs.copyFileSync(npmReadmePath, readmePath);
-  log('Swapped README.md with README.npm.md for npm pack/publish.');
+  fs.renameSync(npmReadmePath, hiddenNpmReadmePath);
+  fs.copyFileSync(hiddenNpmReadmePath, readmePath);
+  log('Swapped README.md with README.npm.md and hid README.npm.md for npm pack/publish.');
 }
 
 /**
@@ -70,7 +80,12 @@ function handlePostpack() {
 
   fs.copyFileSync(backupPath, readmePath);
   fs.rmSync(backupPath);
-  log('Restored original README.md after npm pack/publish.');
+
+  if (fs.existsSync(hiddenNpmReadmePath)) {
+    fs.renameSync(hiddenNpmReadmePath, npmReadmePath);
+  }
+
+  log('Restored original README.md (and README.npm.md) after npm pack/publish.');
 }
 
 function main() {
