@@ -10,6 +10,8 @@
     "README.md"
   ],
   "scripts": {
+    "prepack": "node scripts/npm-readme.cjs prepack",
+    "postpack": "node scripts/npm-readme.cjs postpack",
     "lint": "pnpm run lint:biome && pnpm run lint:md",
     "lint:biome": "pnpm exec biome lint --reporter summary .",
     "lint:md": "pnpm exec prettier --check \"**/*.{md,mdx,markdown}\"",
