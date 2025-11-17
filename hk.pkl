@@ -16,6 +16,7 @@ local generated_files =
     ".mise.lock",
     "Gemfile.lock",
     "**/pnpm-lock.yaml",
+    "**/pnpm-workspace.yaml",
   )
 
 local spec_kit_files =

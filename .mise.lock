@@ -31,6 +31,10 @@ backend = "aqua:pnpm/pnpm"
 version = "3.4.7"
 backend = "core:ruby"
 
+[[tools.trivy]]
+version = "0.67.2"
+backend = "aqua:aquasecurity/trivy"
+
 [[tools.typos]]
 version = "1.39.2"
 backend = "aqua:crate-ci/typos"

@@ -22,6 +22,7 @@ nwa:
     - 'Gemfile.lock'
     - 'LICENSE'
     - '**/pnpm-lock.yaml'
+    - '**/pnpm-workspace.yaml'
     - '**/*.snap'
     # Unsupported file types
     - '**/*.json'
