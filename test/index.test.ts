@@ -3,16 +3,24 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
  */
 
-import { describe, it, expect } from 'vitest';
+import { describe, expect, it } from 'vitest';
 import * as entities from 'entities';
-import render from '../lib/renderer.js';
+import renderer from '../lib/renderer.js';
+import type { Renderer, RendererData, RendererLocals } from '../types';
+
+const render = renderer as Renderer;
+
+const renderAsciiDoc = (text: string, locals: RendererLocals = {}): string => {
+  const data: RendererData = { text };
+  return render(data, locals);
+};
 
 describe('Asciidoc renderer', () => {
   it('header', () => {
     const body = `
 == Test H2 ==
 `;
-    const result = render({ text: body }, {});
+    const result = renderAsciiDoc(body);
 
     expect(result).toEqual(`<div class="sect1">
 <h2 id="_test_h2">Test H2</h2>
@@ -32,7 +40,7 @@ get '/hi' do
   "Hello World!"
 end
 ----`;
-    const result = render({ text: body }, {});
+    const result = renderAsciiDoc(body);
 
     expect(entities.decodeHTML(result)).toEqual(entities.decodeHTML(`<div class="listingblock">
 <div class="content">

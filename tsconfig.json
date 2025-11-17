@@ -16,6 +16,6 @@
     "rootDir": ".",
     "outDir": "dist"
   },
-  "include": ["index.js", "lib/**/*.js", "types/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "include": ["index.js", "lib/**/*.js", "types/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx", "test/**/*.ts"],
   "exclude": ["dist", "node_modules"]
 }
