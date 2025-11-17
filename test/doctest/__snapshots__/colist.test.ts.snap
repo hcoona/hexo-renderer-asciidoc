@@ -1,0 +1,80 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:colist > basic 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">&#x27;sinatra&#x27;</span> /<span class="regexp">/ (1)</span>
+<span class="regexp"></span>
+<span class="regexp">get &#x27;/hi</span><span class="string">&#x27; do  # (2)</span>
+<span class="string">  &quot;Hello World!&quot; ;; (3)</span>
+<span class="string">end</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>Library import</p>
+</li>
+<li>
+<p>URL mapping</p>
+</li>
+<li>
+<p>Content for response</p>
+</li>
+</ol>
+</div>"
+`;
+
+exports[`DocTest:colist > with-id-and-role 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">&#x27;sinatra&#x27;</span> /<span class="regexp">/ (1)</span>
+<span class="regexp"></span>
+<span class="regexp">get &#x27;/hi</span><span class="string">&#x27; do  # (2)</span>
+<span class="string">  &quot;Hello World!&quot; ;; (3)</span>
+<span class="string">end</span></code></pre>
+</div>
+</div>
+<div id="call" class="colist arabic sinatra">
+<ol>
+<li>
+<p>Library import</p>
+</li>
+<li>
+<p>URL mapping</p>
+</li>
+<li>
+<p>Content for response</p>
+</li>
+</ol>
+</div>"
+`;
+
+exports[`DocTest:colist > with-title 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre><code class="highlight ruby"><span class="keyword">require</span> <span class="string">&#x27;sinatra&#x27;</span> /<span class="regexp">/ (1)</span>
+<span class="regexp"></span>
+<span class="regexp">get &#x27;/hi</span><span class="string">&#x27; do  # (2)</span>
+<span class="string">  &quot;Hello World!&quot; ;; (3)</span>
+<span class="string">end</span></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<div class="title">Description</div>
+<ol>
+<li>
+<p>Library import</p>
+</li>
+<li>
+<p>URL mapping</p>
+</li>
+<li>
+<p>Content for response</p>
+</li>
+</ol>
+</div>"
+`;

@@ -5,15 +5,7 @@
 
 import { describe, expect, it } from 'vitest';
 import * as entities from 'entities';
-import renderer from '../lib/renderer.js';
-import type { Renderer, RendererData, RendererLocals } from '../types';
-
-const render = renderer as Renderer;
-
-const renderAsciiDoc = (text: string, locals: RendererLocals = {}): string => {
-  const data: RendererData = { text };
-  return render(data, locals);
-};
+import { renderAsciiDoc } from './helpers/render';
 
 describe('Asciidoc renderer', () => {
   it('header', () => {

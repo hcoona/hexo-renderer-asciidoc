@@ -1,0 +1,48 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:preamble > basic 1`] = `
+"<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This journey begins on a bleary Monday morning.
+Our intrepid team is in desperate need of double shot mochas, but the milk expired eight days ago.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cavern_glow">Cavern Glow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The river rages through the cavern, rattling its content.</p>
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:preamble > toc-placement-preamble 1`] = `
+"<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This journey begins on a bleary Monday morning.
+Our intrepid team is in desperate need of double shot mochas, but the milk expired eight days ago.</p>
+</div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_cavern_glow">Cavern Glow</a></li>
+</ul>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cavern_glow">Cavern Glow</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The river rages through the cavern, rattling its content.</p>
+</div>
+</div>
+</div>"
+`;

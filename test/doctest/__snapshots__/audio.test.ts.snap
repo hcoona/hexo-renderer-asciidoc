@@ -1,0 +1,45 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:audio > basic 1`] = `
+"<div class="audioblock">
+<div class="content">
+<audio src="ocean_waves.mp3" controls>
+Your browser does not support the audio tag.
+</audio>
+</div>
+</div>"
+`;
+
+exports[`DocTest:audio > with-all-options 1`] = `
+"<div class="audioblock">
+<div class="content">
+<audio src="ocean_waves.mp3" autoplay loop>
+Your browser does not support the audio tag.
+</audio>
+</div>
+</div>"
+`;
+
+exports[`DocTest:audio > with-id-and-role 1`] = `
+"<div id="ocean" class="audioblock wave">
+<div class="content">
+<audio src="ocean_waves.mp3" controls>
+Your browser does not support the audio tag.
+</audio>
+</div>
+</div>"
+`;
+
+exports[`DocTest:audio > with-title 1`] = `
+"<div class="audioblock">
+<div class="title">Waves!</div>
+<div class="content">
+<audio src="ocean_waves.mp3" controls>
+Your browser does not support the audio tag.
+</audio>
+</div>
+</div>"
+`;

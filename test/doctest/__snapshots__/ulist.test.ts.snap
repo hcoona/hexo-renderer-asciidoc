@@ -1,0 +1,144 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:ulist > basic 1`] = `
+"<div class="ulist">
+<ul>
+<li>
+<p>Edgar Allen Poe</p>
+</li>
+<li>
+<p>Sheri S. Tepper</p>
+</li>
+<li>
+<p>Bill Bryson</p>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:ulist > checklist 1`] = `
+"<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p>&#10003; checked</p>
+</li>
+<li>
+<p>&#10003; also checked</p>
+</li>
+<li>
+<p>&#10063; not checked</p>
+</li>
+<li>
+<p>normal list item</p>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:ulist > complex-content 1`] = `
+"<div class="ulist">
+<ul>
+<li>
+<p>Every list item has at least one paragraph of content,
+which may be wrapped, even using a hanging indent.</p>
+<div class="paragraph">
+<p>Additional paragraphs or blocks are adjoined by putting
+a list continuation on a line adjacent to both blocks.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">list continuation</dt>
+<dd>
+<p>a plus sign (<code>&#43;</code>) on a line by itself</p>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>A literal paragraph does not require a list continuation.</p>
+<div class="literalblock">
+<div class="content">
+<pre>$ gem install asciidoctor</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:ulist > max-nesting 1`] = `
+"<div class="ulist">
+<ul>
+<li>
+<p>level 1</p>
+<div class="ulist">
+<ul>
+<li>
+<p>level 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>level 3</p>
+<div class="ulist">
+<ul>
+<li>
+<p>level 4</p>
+<div class="ulist">
+<ul>
+<li>
+<p>level 5</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>level 2</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:ulist > with-id-and-role 1`] = `
+"<div id="authors" class="ulist green">
+<ul>
+<li>
+<p>Edgar Allen Poe</p>
+</li>
+<li>
+<p>Sheri S. Tepper</p>
+</li>
+<li>
+<p>Bill Bryson</p>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:ulist > with-title 1`] = `
+"<div class="ulist">
+<div class="title">Writers</div>
+<ul>
+<li>
+<p>Edgar Allen Poe</p>
+</li>
+<li>
+<p>Sheri S. Tepper</p>
+</li>
+<li>
+<p>Bill Bryson</p>
+</li>
+</ul>
+</div>"
+`;

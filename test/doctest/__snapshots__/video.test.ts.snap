@@ -1,0 +1,85 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:video > basic 1`] = `
+"<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-dimensions 1`] = `
+"<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4" width="640" height="480" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-end 1`] = `
+"<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4#t=,60" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-id-and-role 1`] = `
+"<div id="lindsey" class="videoblock watch">
+<div class="content">
+<video src="video_file.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-options 1`] = `
+"<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4" autoplay loop>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-poster 1`] = `
+"<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4" poster="sunset.jpg" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-start 1`] = `
+"<div class="videoblock">
+<div class="content">
+<video src="video_file.mp4#t=10" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;
+
+exports[`DocTest:video > with-title 1`] = `
+"<div class="videoblock">
+<div class="title">Must watch!</div>
+<div class="content">
+<video src="video_file.mp4" controls>
+Your browser does not support the video tag.
+</video>
+</div>
+</div>"
+`;

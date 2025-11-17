@@ -1,0 +1,22 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:inline_menu > menu 1`] = `
+"<div class="paragraph">
+<p><b class="menuref">File</b></p>
+</div>"
+`;
+
+exports[`DocTest:inline_menu > menuitem 1`] = `
+"<div class="paragraph">
+<p><span class="menuseq"><b class="menu">File</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Save</b></span></p>
+</div>"
+`;
+
+exports[`DocTest:inline_menu > submenu 1`] = `
+"<div class="paragraph">
+<p><span class="menuseq"><b class="menu">View</b>&#160;<b class="caret">&#8250;</b> <b class="submenu">Zoom</b>&#160;<b class="caret">&#8250;</b> <b class="menuitem">Reset</b></span></p>
+</div>"
+`;

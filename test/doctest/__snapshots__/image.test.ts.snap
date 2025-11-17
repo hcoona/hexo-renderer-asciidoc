@@ -1,0 +1,77 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:image > basic 1`] = `
+"<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-align 1`] = `
+"<div class="imageblock text-center">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-alt-text 1`] = `
+"<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="Shining sun">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-dimensions 1`] = `
+"<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="Shining sun" width="300" height="200">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-float 1`] = `
+"<div class="imageblock right">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-id 1`] = `
+"<div id="img-sunset" class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-link 1`] = `
+"<div class="imageblock">
+<div class="content">
+<a class="image" href="http://www.flickr.com/photos/javh/5448336655"><img src="sunset.jpg" alt="sunset"></a>
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-roles 1`] = `
+"<div class="imageblock right text-center">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+</div>"
+`;
+
+exports[`DocTest:image > with-title 1`] = `
+"<div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="sunset">
+</div>
+<div class="title">Figure 1. A mountain sunset</div>
+</div>"
+`;

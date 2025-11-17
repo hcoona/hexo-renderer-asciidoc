@@ -1,0 +1,41 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:example > basic 1`] = `
+"<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.</p>
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:example > with-id-and-role 1`] = `
+"<div id="lorem" class="exampleblock ipsum">
+<div class="content">
+<div class="paragraph">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.</p>
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:example > with-title 1`] = `
+"<div class="exampleblock">
+<div class="title">Example 1. Sample document</div>
+<div class="content">
+<div class="paragraph">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+incididunt ut labore et dolore magna aliqua.</p>
+</div>
+<div class="paragraph">
+<p>The document header is useful, but not required.</p>
+</div>
+</div>
+</div>"
+`;

@@ -1,0 +1,18 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:floating_title > level1 1`] = `"<h2 id="_discrete_title_level_1" class="discrete">Discrete Title Level 1</h2>"`;
+
+exports[`DocTest:floating_title > level2 1`] = `"<h3 id="_discrete_title_level_2" class="discrete">Discrete Title Level 2</h3>"`;
+
+exports[`DocTest:floating_title > level3 1`] = `"<h4 id="_discrete_title_level_3" class="discrete">Discrete Title Level 3</h4>"`;
+
+exports[`DocTest:floating_title > level4 1`] = `"<h5 id="_discrete_title_level_4" class="discrete">Discrete Title Level 4</h5>"`;
+
+exports[`DocTest:floating_title > level5 1`] = `"<h6 id="_discrete_title_level_5" class="discrete">Discrete Title Level 5</h6>"`;
+
+exports[`DocTest:floating_title > with-custom-id 1`] = `"<h2 id="flying" class="discrete">Discrete Title Level 1</h2>"`;
+
+exports[`DocTest:floating_title > with-roles 1`] = `"<h3 id="_discrete_title_level_2" class="discrete flying circus">Discrete Title Level 2</h3>"`;

@@ -1,0 +1,12 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// .basic
+Apocalyptic party.footnote:[The double hail-and-rainbow level makes my toes tingle.]
+
+// .xref
+A bold statement.footnoteref:[disclaimer,Opinions are my own.]
+Another outrageous statement.footnoteref:[disclaimer]
+
+// .xref-unresolved
+A bold statement.footnoteref:[foobar]

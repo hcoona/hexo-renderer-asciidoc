@@ -1,0 +1,32 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:paragraph > basic 1`] = `
+"<div class="paragraph">
+<p>Paragraphs don&#8217;t require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.</p>
+</div>
+<div class="paragraph">
+<p>To begin a new paragraph, separate it by at least one blank line.</p>
+</div>"
+`;
+
+exports[`DocTest:paragraph > with-id-and-role 1`] = `
+"<div id="para-1" class="paragraph red">
+<p>Paragraphs don&#8217;t require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.</p>
+</div>"
+`;
+
+exports[`DocTest:paragraph > with-title 1`] = `
+"<div class="paragraph">
+<div class="title">Paragraphs</div>
+<p>Paragraphs don&#8217;t require any special markup in AsciiDoc.
+A paragraph is just one or more lines of consecutive text.</p>
+</div>
+<div class="paragraph">
+<p>To begin a new paragraph, separate it by at least one blank line.</p>
+</div>"
+`;

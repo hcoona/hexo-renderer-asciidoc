@@ -1,0 +1,186 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:section > book-part-title 1`] = `
+"<h1 id="_part_title" class="sect0">Part Title</h1>
+<div class="sect1">
+<h2 id="_section_level_1">Section Level 1</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > level1 1`] = `
+"<div class="sect1">
+<h2 id="_section_level_1">Section Level 1</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > level2 1`] = `
+"<div class="sect2">
+<h3 id="_section_level_2">Section Level 2</h3>
+
+</div>"
+`;
+
+exports[`DocTest:section > level3 1`] = `
+"<div class="sect3">
+<h4 id="_section_level_3">Section Level 3</h4>
+
+</div>"
+`;
+
+exports[`DocTest:section > level4 1`] = `
+"<div class="sect4">
+<h5 id="_section_level_4">Section Level 4</h5>
+
+</div>"
+`;
+
+exports[`DocTest:section > level5 1`] = `
+"<div class="sect5">
+<h6 id="_section_level_5">Section Level 5</h6>
+
+</div>"
+`;
+
+exports[`DocTest:section > max-nesting 1`] = `
+"<div class="sect1">
+<h2 id="_section_level_1">Section Level 1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_section_level_2">Section Level 2</h3>
+<div class="sect3">
+<h4 id="_section_level_3">Section Level 3</h4>
+<div class="sect4">
+<h5 id="_section_level_4">Section Level 4</h5>
+<div class="sect5">
+<h6 id="_section_level_5">Section Level 5</h6>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_section_level_2_2">Section Level 2</h3>
+
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > numbered 1`] = `
+"<div class="sect1">
+<h2 id="_introduction_to_asciidoctor">1. Introduction to Asciidoctor</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quick_starts">2. Quick Starts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_usage">2.1. Usage</h3>
+<div class="sect3">
+<h4 id="_using_the_command_line_interface">2.1.1. Using the Command Line Interface</h4>
+<div class="sect4">
+<h5 id="_processing_your_content">Processing Your Content</h5>
+
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax">2.2. Syntax</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_terms_and_concepts">3. Terms and Concepts</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > numbered-sectnumlevels-1 1`] = `
+"<div class="sect1">
+<h2 id="_introduction_to_asciidoctor">1. Introduction to Asciidoctor</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quick_starts">2. Quick Starts</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_usage">Usage</h3>
+<div class="sect3">
+<h4 id="_using_the_command_line_interface">Using the Command Line Interface</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="_syntax">Syntax</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_terms_and_concepts">3. Terms and Concepts</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > sectanchors 1`] = `
+"<div class="sect1">
+<h2 id="_title_with_anchor"><a class="anchor" href="#_title_with_anchor"></a>Title with anchor</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > sectanchors-and-sectlinks 1`] = `
+"<div class="sect1">
+<h2 id="_linked_title_with_anchor"><a class="anchor" href="#_linked_title_with_anchor"></a><a class="link" href="#_linked_title_with_anchor">Linked title with anchor</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > sectlinks 1`] = `
+"<div class="sect1">
+<h2 id="_linked_title"><a class="link" href="#_linked_title">Linked title</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > with-custom-id 1`] = `
+"<div class="sect1">
+<h2 id="foo">Section Title</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:section > with-roles 1`] = `
+"<div class="sect1 center red">
+<h2 id="_section_title">Section Title</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;

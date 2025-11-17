@@ -1,0 +1,126 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:toc > doc-without-sections 1`] = `"<!-- toc disabled -->"`;
+
+exports[`DocTest:toc > in-preamble 1`] = `
+"<div id="preamble">
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_the_ravages_of_writing">The Ravages of Writing</a>
+<ul class="sectlevel2">
+<li><a href="#_a_recipe_for_potion">A Recipe for Potion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_ravages_of_writing">The Ravages of Writing</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_recipe_for_potion">A Recipe for Potion</h3>
+
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:toc > in-section 1`] = `
+"<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_the_ravages_of_writing">The Ravages of Writing</a>
+<ul class="sectlevel2">
+<li><a href="#_a_recipe_for_potion">A Recipe for Potion</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_ravages_of_writing">The Ravages of Writing</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_recipe_for_potion">A Recipe for Potion</h3>
+
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:toc > with-id-and-role 1`] = `
+"<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div id="mytoc" class="taco">
+<div id="mytoctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_the_ravages_of_writing">The Ravages of Writing</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_ravages_of_writing">The Ravages of Writing</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:toc > with-levels 1`] = `
+"<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_the_ravages_of_writing">The Ravages of Writing</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_ravages_of_writing">The Ravages of Writing</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_a_recipe_for_potion">A Recipe for Potion</h3>
+
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:toc > with-title 1`] = `
+"<div class="sect1">
+<h2 id="_introduction">Introduction</h2>
+<div class="sectionbody">
+<div id="toc" class="toc">
+<div id="toctitle" class="title">Table of Adventures</div>
+<ul class="sectlevel1">
+<li><a href="#_introduction">Introduction</a></li>
+<li><a href="#_the_ravages_of_writing">The Ravages of Writing</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_ravages_of_writing">The Ravages of Writing</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;

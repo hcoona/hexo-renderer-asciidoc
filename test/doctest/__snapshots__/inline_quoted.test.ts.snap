@@ -1,0 +1,124 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:inline_quoted > asciimath 1`] = `
+"<div class="paragraph">
+<p>\\$sqrt(4) = 2\\$</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > basic 1`] = `
+"<div class="paragraph">
+<p><span class="why">chunky bacon</span></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > double 1`] = `
+"<div class="paragraph">
+<p>&#8220;chunky bacon&#8221;</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > double-with-role 1`] = `
+"<div class="paragraph">
+<p><span class="why">&#8220;chunky bacon&#8221;</span></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > emphasis 1`] = `
+"<div class="paragraph">
+<p><em>chunky bacon</em></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > emphasis-with-role 1`] = `
+"<div class="paragraph">
+<p><em class="why">chunky bacon</em></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > latexmath 1`] = `
+"<div class="paragraph">
+<p>\\(C = \\alpha + \\beta Y^&#123;\\gamma&#125; + \\epsilon\\)</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > mark 1`] = `
+"<div class="paragraph">
+<p><mark>chunky bacon</mark></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > mixed-monospace-bold-italic 1`] = `
+"<div class="paragraph">
+<p><code><strong><em>monospace bold italic phrase</em></strong></code> and le<code><strong><em>tt</em></strong></code>ers</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > monospaced 1`] = `
+"<div class="paragraph">
+<p><code>hello world!</code></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > monospaced-with-role 1`] = `
+"<div class="paragraph">
+<p><code class="why">hello world!</code></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > single 1`] = `
+"<div class="paragraph">
+<p>&#8216;chunky bacon&#8217;</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > single-with-role 1`] = `
+"<div class="paragraph">
+<p><span class="why">&#8216;chunky bacon&#8217;</span></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > strong 1`] = `
+"<div class="paragraph">
+<p><strong>chunky bacon</strong></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > strong-with-role 1`] = `
+"<div class="paragraph">
+<p><strong class="why">chunky bacon</strong></p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > subscript 1`] = `
+"<div class="paragraph">
+<p><sub>sub</sub>chunky bacon</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > subscript-with-role 1`] = `
+"<div class="paragraph">
+<p><sub class="why">sub</sub>chunky bacon</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > superscript 1`] = `
+"<div class="paragraph">
+<p><sup>super</sup>chunky bacon</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > superscript-with-role 1`] = `
+"<div class="paragraph">
+<p><sup class="why">super</sup>chunky bacon</p>
+</div>"
+`;
+
+exports[`DocTest:inline_quoted > with-id 1`] = `
+"<div class="paragraph">
+<p><em id="why">chunky bacon</em></p>
+</div>"
+`;

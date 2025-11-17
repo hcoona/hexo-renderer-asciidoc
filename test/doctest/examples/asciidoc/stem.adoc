@@ -1,0 +1,31 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// .asciimath
+:stem: asciimath
+[stem]
+++++
+sqrt(4) = 2
+++++
+
+// .latexmath
+:stem: latexmath
+[stem]
+++++
+C = \alpha + \beta Y^{\gamma} + \epsilon
+++++
+
+// .with-title
+:stem:
+[stem]
+.Equation
+++++
+sqrt(4) = 2
+++++
+
+// .with-id-and-role
+:stem:
+[stem, id="sqrt", role="right"]
+++++
+sqrt(4) = 2
+++++

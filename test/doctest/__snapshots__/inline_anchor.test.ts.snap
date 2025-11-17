@@ -1,0 +1,108 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:inline_anchor > bibref 1`] = `
+"<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="prag"></a>[prag] Andy Hunt &amp; Dave Thomas. The Pragmatic Programmer</p>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > bibref-with-text 1`] = `
+"<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="prag"></a>[1] Andy Hunt &amp; Dave Thomas. The Pragmatic Programmer</p>
+</li>
+</ul>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > link 1`] = `
+"<div class="paragraph">
+<p><a href="http://www.asciidoctor.org" class="bare">http://www.asciidoctor.org</a></p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > link-with-role 1`] = `
+"<div class="paragraph">
+<p><a href="http://discuss.asciidoctor.org/" class="green"><strong>mailing list</strong></a></p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > link-with-target-blank 1`] = `
+"<div class="paragraph">
+<p><a href="view-source:asciidoctor.org" target="_blank" rel="noopener">Asciidoctor homepage</a></p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > link-with-text 1`] = `
+"<div class="paragraph">
+<p><a href="irc://irc.freenode.org/#asciidoctor">Asciidoctor IRC channel</a></p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > ref 1`] = `
+"<div class="paragraph">
+<p><a id="bookmark-a"></a> Inline anchors make arbitrary content referenceable.</p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > xref 1`] = `
+"<div class="paragraph">
+<p>The section <a href="#page-break">[page-break]</a> describes how to add a page break.</p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > xref-interdoc 1`] = `
+"<div class="paragraph">
+<p>The section <a href="manual.html#page-break">manual.html</a> describes how to add a page break.</p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > xref-reftext 1`] = `
+"<div class="paragraph">
+<p>Refer to <a href="#install">Installation Procedure</a>.</p>
+</div>
+<div class="sect1">
+<h2 id="install">Installation</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > xref-resolved-text 1`] = `
+"<div class="paragraph">
+<p>Refer to <a href="#_section_a">Section A</a>.</p>
+</div>
+<div class="sect1">
+<h2 id="_section_a">Section A</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > xref-with-text 1`] = `
+"<div class="paragraph">
+<p>The section <a href="#page-break">Page break</a> describes how to add a page break.</p>
+</div>"
+`;
+
+exports[`DocTest:inline_anchor > xref-xrefstyle 1`] = `
+"<div class="paragraph">
+<p>Refer to <a href="#install">Sec. 1</a>.</p>
+</div>
+<div class="sect1">
+<h2 id="install">1. Installation</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;

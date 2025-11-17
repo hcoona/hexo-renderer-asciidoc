@@ -1,0 +1,91 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:listing > basic 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre>echo -n "Please enter your name: "
+read name
+echo "Hello, $name!"</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > basic-nowrap 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre class="nowrap">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > basic-with-id-and-role 1`] = `
+"<div id="code" class="listingblock example">
+<div class="content">
+<pre>echo -n "Please enter your name: "
+read name
+echo "Hello, $name!"</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > basic-with-title 1`] = `
+"<div class="listingblock">
+<div class="title">Reading user input</div>
+<div class="content">
+<pre>echo -n "Please enter your name: "
+read name
+echo "Hello, $name!"</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > source 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre><code class="highlight plaintext">5.times do
+  print &quot;Odelay!&quot;
+end</code></pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > source-nowrap 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre><code class="highlight java"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ApplicationConfigurationProvider</span> <span class="keyword">extends</span> <span class="title class_">HttpConfigurationProvider</span> &#123;
+
+   <span class="keyword">public</span> Configuration <span class="title function_">getConfiguration</span><span class="params">(ServletContext context)</span> &#123;
+      <span class="keyword">return</span> ConfigurationBuilder.begin()
+               .addRule()
+               .<span class="keyword">when</span>(Direction.isInbound().and(Path.matches(<span class="string">&quot;/&#123;path&#125;&quot;</span>)))
+               .perform(Log.message(Level.INFO, <span class="string">&quot;Client requested path: &#123;path&#125;&quot;</span>))
+               .where(<span class="string">&quot;path&quot;</span>).matches(<span class="string">&quot;.*&quot;</span>);
+   &#125;
+&#125;</code></pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > source-with-language 1`] = `
+"<div class="listingblock">
+<div class="content">
+<pre><code class="highlight ruby"><span class="number">5</span>.times <span class="keyword">do</span>
+  print <span class="string">&quot;Odelay!&quot;</span>
+<span class="keyword">end</span></code></pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:listing > source-with-title 1`] = `
+"<div class="listingblock">
+<div class="title">Odelay!</div>
+<div class="content">
+<pre><code class="highlight plaintext">5.times do
+  print &quot;Odelay!&quot;
+end</code></pre>
+</div>
+</div>"
+`;

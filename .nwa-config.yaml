@@ -6,7 +6,9 @@ nwa:
   year: "2015"
   spdxids: "LGPL-3.0-or-later WITH LGPL-3.0-linking-exception"
   style:
+    - "adoc:line"
     - "pkl:line"
+    - "snap:line"
 
   skip:
     - ".git/**"

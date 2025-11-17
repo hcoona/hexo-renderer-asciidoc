@@ -1,0 +1,11 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// .plus-sign
+Rubies are red, +
+Topazes are blue.
+
+// .hardbreaks
+[%hardbreaks]
+Ruby is red.
+Java is black.

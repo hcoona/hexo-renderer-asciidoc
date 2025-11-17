@@ -1,0 +1,45 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:literal > basic 1`] = `
+"<div class="literalblock">
+<div class="content">
+<pre>error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:literal > nowrap 1`] = `
+"<div class="literalblock">
+<div class="content">
+<pre class="nowrap">error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:literal > with-id-and-role 1`] = `
+"<div id="error" class="literalblock fatal">
+<div class="content">
+<pre>error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n</pre>
+</div>
+</div>"
+`;
+
+exports[`DocTest:literal > with-title 1`] = `
+"<div class="literalblock">
+<div class="title">Die again?</div>
+<div class="content">
+<pre>error: The requested operation returned error: 1954 Forbidden search for defensive operations manual
+absolutely fatal: operation initiation lost in the dodecahedron of doom
+would you like to die again? y/n</pre>
+</div>
+</div>"
+`;

@@ -1,0 +1,59 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:verse > basic 1`] = `
+"<div class="verseblock">
+<pre class="content">The fog comes
+on little cat feet.</pre>
+</div>"
+`;
+
+exports[`DocTest:verse > basic-with-attribution 1`] = `
+"<div class="verseblock">
+<pre class="content">The fog comes
+on little cat feet.</pre>
+<div class="attribution">
+&#8212; Carl Sandburg
+</div>
+</div>"
+`;
+
+exports[`DocTest:verse > basic-with-attribution-and-citetitle 1`] = `
+"<div class="verseblock">
+<pre class="content">The fog comes
+on little cat feet.</pre>
+<div class="attribution">
+&#8212; Carl Sandburg<br>
+<cite>two lines from the poem Fog</cite>
+</div>
+</div>"
+`;
+
+exports[`DocTest:verse > basic-with-id-and-role 1`] = `
+"<div id="sandburg" class="verseblock center">
+<pre class="content">The fog comes
+on little cat feet.</pre>
+</div>"
+`;
+
+exports[`DocTest:verse > basic-with-title 1`] = `
+"<div class="verseblock">
+<div class="title">Poetry</div>
+<pre class="content">The fog comes
+on little cat feet.</pre>
+</div>"
+`;
+
+exports[`DocTest:verse > block 1`] = `
+"<div class="verseblock">
+<pre class="content">The fog comes
+on little cat feet.
+
+It sits looking
+over harbor and city
+on silent haunches
+and then moves on.</pre>
+</div>"
+`;

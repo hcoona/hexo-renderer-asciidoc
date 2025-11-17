@@ -1,0 +1,14 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:page_break > basic 1`] = `
+"<div class="paragraph">
+<p>Text on the first page</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>was broken!</p>
+</div>"
+`;

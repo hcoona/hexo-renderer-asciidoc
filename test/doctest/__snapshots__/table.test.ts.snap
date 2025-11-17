@@ -1,0 +1,394 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:table > aligns-per-cell 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Prefix the &#123;vbar&#125; with &#123;caret&#125; to center content horizontally</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix the &#123;vbar&#125; with &lt; to align the content to the left horizontally</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Prefix the &#123;vbar&#125; with &gt; to align the content to the right horizontally</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Prefix the &#123;vbar&#125; with a . and &#123;caret&#125; to center the content in the cell vertically</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix the &#123;vbar&#125; with a . and &lt; to align the content to the top of the cell</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">Prefix the &#123;vbar&#125; with a . and &gt; to align the content to the bottom of the cell</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-middle" colspan="3"><p class="tableblock">This content spans three columns (3&#123;plus&#125;) and is centered horizontally (&#123;caret&#125;) and vertically (.&#123;caret&#125;) within the cell.</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > basic 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > cell-with-paragraphs 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single paragraph on row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">First paragraph on row 2</p>
+<p class="tableblock">Second paragraph on row 2</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > colspan 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="2"><p class="tableblock">Content in a single cell that spans columns 1 and 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > insane-cells-formatting 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>This content is duplicated across two columns.</code></p>
+<p class="tableblock"><code>It is aligned right horizontally.</code></p>
+<p class="tableblock"><code>And it is monospaced.</code></p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock"><code>This content is duplicated across two columns.</code></p>
+<p class="tableblock"><code>It is aligned right horizontally.</code></p>
+<p class="tableblock"><code>And it is monospaced.</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-bottom" rowspan="3"><p class="tableblock"><strong>This cell spans 3 rows. The content is centered horizontally, aligned to the bottom of the cell, and strong.</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>This content is emphasized.</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><div class="literal"><pre>This content is aligned to the top of the cell and literal.</pre></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="listingblock">
+<div class="content">
+<pre><code class="highlight plaintext">puts &quot;This is a source block!&quot;</code></pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > rowspan 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" rowspan="2"><p class="tableblock">Content in a single cell that spans rows 2 and 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 3</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-autowidth 1`] = `
+"<table class="tableblock frame-all grid-all fit-content">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-autowidth-and-width 1`] = `
+"<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-cols-halign 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-right valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-cols-styles 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.667%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="imageblock">
+<div class="content">
+<img src="sunset.jpg" alt="AsciiDoc content">
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Emphasized text</em></p></td>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Styled like a header</p></th>
+<td class="tableblock halign-left valign-top"><div class="literal"><pre>Literal block</pre></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Monospaced text</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Strong text</strong></p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-cols-valign 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-bottom"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-cols-width 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 20%;">
+<col style="width: 30%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 3, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-float 1`] = `
+"<table class="tableblock frame-all grid-all stretch left">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-footer 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Footer in column 1, row 3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Footer in column 2, row 3</p></td>
+</tr>
+</tfoot>
+</table>"
+`;
+
+exports[`DocTest:table > with-frame-sides 1`] = `
+"<table class="tableblock frame-sides grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-grid-cols 1`] = `
+"<table class="tableblock frame-all grid-cols stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-header 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name of Column 1</th>
+<th class="tableblock halign-left valign-top">Name of Column 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 2</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-id-and-role 1`] = `
+"<table id="tabular" class="tableblock frame-all grid-all stretch center">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-title 1`] = `
+"<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Table FTW!</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;
+
+exports[`DocTest:table > with-width 1`] = `
+"<table class="tableblock frame-all grid-all" style="width: 80%;">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 1, row 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cell in column 2, row 1</p></td>
+</tr>
+</tbody>
+</table>"
+`;

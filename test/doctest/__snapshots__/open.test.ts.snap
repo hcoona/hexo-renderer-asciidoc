@@ -1,0 +1,71 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:open > abstract 1`] = `
+"<div class="quoteblock abstract">
+<blockquote>
+<div class="paragraph">
+<p>This is an abstract quote block.</p>
+</div>
+</blockquote>
+</div>"
+`;
+
+exports[`DocTest:open > abstract-with-id-and-role 1`] = `
+"<div id="open" class="quoteblock abstract example">
+<blockquote>
+<div class="paragraph">
+<p>This is an abstract quote block.
+Who knows what it really means?</p>
+</div>
+</blockquote>
+</div>"
+`;
+
+exports[`DocTest:open > abstract-with-title 1`] = `
+"<div class="quoteblock abstract">
+<div class="title">Abstract title is abstract</div>
+<blockquote>
+<div class="paragraph">
+<p>This is an abstract quote block.
+Who knows what it really means?</p>
+</div>
+</blockquote>
+</div>"
+`;
+
+exports[`DocTest:open > basic 1`] = `
+"<div class="openblock">
+<div class="content">
+<div class="paragraph">
+<p>An open block can be an anonymous container,
+or it can masquerade as any other block.</p>
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:open > basic-with-id-and-role 1`] = `
+"<div id="open" class="openblock example">
+<div class="content">
+<div class="paragraph">
+<p>An open block can be an anonymous container,
+or it can masquerade as any other block.</p>
+</div>
+</div>
+</div>"
+`;
+
+exports[`DocTest:open > basic-with-title 1`] = `
+"<div class="openblock">
+<div class="title">An open block</div>
+<div class="content">
+<div class="paragraph">
+<p>An open block can be an anonymous container,
+or it can masquerade as any other block.</p>
+</div>
+</div>
+</div>"
+`;

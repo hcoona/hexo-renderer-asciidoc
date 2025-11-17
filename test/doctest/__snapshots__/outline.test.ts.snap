@@ -1,0 +1,150 @@
+// Copyright 2015 Shuai Zhang
+// SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
+
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`DocTest:outline > basic 1`] = `
+"<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_section_1">Section 1</a></li>
+<li><a href="#_section_2">Section 2</a>
+<ul class="sectlevel2">
+<li><a href="#_section_2_1">Section 2.1</a></li>
+</ul>
+</li>
+<li><a href="#_section_3">Section 3</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_section_1">Section 1</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2">Section 2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_section_2_1">Section 2.1</h3>
+<div class="sect3">
+<h4 id="_section_2_1_1">Section 2.1.1</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_3">Section 3</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:outline > numbered 1`] = `
+"<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_section_1">1. Section 1</a></li>
+<li><a href="#_unnumbered_section">Unnumbered Section</a></li>
+<li><a href="#_section_2">2. Section 2</a>
+<ul class="sectlevel2">
+<li><a href="#_section_2_1">2.1. Section 2.1</a></li>
+</ul>
+</li>
+<li><a href="#_section_3">3. Section 3</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_section_1">1. Section 1</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_unnumbered_section">Unnumbered Section</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2">2. Section 2</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_section_2_1">2.1. Section 2.1</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_3">3. Section 3</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:outline > sectnumlevels 1`] = `
+"<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_section_1">1. Section 1</a>
+<ul class="sectlevel2">
+<li><a href="#_section_1_1">Section 1.1</a>
+<ul class="sectlevel3">
+<li><a href="#_section_1_1_1">Section 1.1.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_section_2">2. Section 2</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_section_1">1. Section 1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_section_1_1">Section 1.1</h3>
+<div class="sect3">
+<h4 id="_section_1_1_1">Section 1.1.1</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2">2. Section 2</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
+
+exports[`DocTest:outline > toclevels 1`] = `
+"<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_section_1">Section 1</a></li>
+<li><a href="#_section_2">Section 2</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_section_1">Section 1</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_section_1_1">Section 1.1</h3>
+<div class="sect3">
+<h4 id="_section_1_1_1">Section 1.1.1</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_2">Section 2</h2>
+<div class="sectionbody">
+
+</div>
+</div>"
+`;
