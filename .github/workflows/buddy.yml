@@ -38,6 +38,7 @@ jobs:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
           registry-url: https://npm.pkg.github.com
+          scope: '@hcoona'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
