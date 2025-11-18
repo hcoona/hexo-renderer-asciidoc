@@ -81,6 +81,18 @@ jobs:
           echo "Using dist-tag: $CHANNEL (derived from $RELEASE_TAG)"
           echo "tag=$CHANNEL" >> "$GITHUB_OUTPUT"
 
+      - name: Patch package name for GitHub Packages
+        run: |
+          set -euo pipefail
+          cp package.json package.json.bak
+
+          node << 'EOF'
+          const fs = require('fs');
+          const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+          pkg.name = '@hcoona/' + pkg.name;
+          fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
+          EOF
+
       - name: Publish to GitHub Packages
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
