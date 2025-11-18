@@ -22,6 +22,18 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
 > and changes the project license. Treat it as a breaking change if you rely
 > on older Node.js versions or on the previous ISC license.
 
+### Highlights
+
+- Target modern runtimes only: minimum Node.js 20.19.0, full TypeScript rewrite,
+  and refreshed build/test stack (tsdown, Vitest, Biome) for long-term support.
+- Ship a ready-to-run Hexo example and an automated Hexo integration test so
+  contributors can verify renderer behaviour end to end.
+- Audit and upgrade DOM / renderer dependencies (Cheerio 1.1.x, Entities 7,
+  hexo-util 4) to remove the legacy security advisories Trivy reported and to
+  keep syntax highlighting stable across custom languages.
+- Expand CI with GitHub Actions plus a Buddy pipeline so both community and
+  internal releases follow the same checks.
+
 ### Breaking / noteworthy changes
 
 - Raise the required Node.js version from `>=12.4.0` to `>=20.19.0`.
@@ -41,6 +53,10 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
 - Upgrade `hexo-util` to `^4.0.0` to pick up the latest highlight fixes,
   including support for custom Highlight.js languages and safer URL encoding
   in `encodeURL`.
+- Refresh the DOM post-processing pipeline by pairing Cheerio `^1.1.2` with
+  `entities@7`, preserving escaped entities until Hexo's highlighter runs and
+  eliminating Trivy-reported vulnerabilities caused by the legacy Cheerio
+  release.
 - Fix a regression introduced by the TypeScript build that imported
   `hexo-util` as a default export. The new bundle now consumes the named
   `highlight` export so `hexo-util.highlight` is always defined when Hexo
@@ -49,7 +65,8 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
   local renderer via a `link:` dependency so contributors can test changes
   without publishing to npm. The example keeps its own pnpm lockfile, enables
   Hexo's stock highlighter, and documents the renderer defaults without adding
-  fictitious configuration flags.
+  fictitious configuration flags. Patch vulnerabilities flagged by Trivy so the
+  sample dependencies stay clean between releases.
 - Ship a dedicated `pnpm-workspace.yaml` inside the example so `pnpm install`
   runs there instead of jumping back to the repository root. This keeps the
   demo's dependencies isolated and prevents `hexo-util` regressions from stale
@@ -79,6 +96,11 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
   TypeScript blueprint: the pure renderer now lives under `src/core/`, Hexo
   integration logic under `src/hexo/`, and `src/lib/renderer.ts` became a thin
   compatibility shim.
+- Add a Vitest-powered Hexo integration test that boots a temporary Hexo site
+  and exercises `registerRenderer`, giving us end-to-end coverage for the
+  renderer contract (commit `d088f83`).
+- Introduce a Buddy pipeline workflow alongside GitHub Actions so release
+  automation stays consistent across providers (commit `ca82bdc`).
 
 ### Migration notes
 
