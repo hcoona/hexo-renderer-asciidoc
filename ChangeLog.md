@@ -12,7 +12,7 @@ The version scheme follows [Semantic Versioning 2.0.0](https://semver.org/).
 > [!NOTE]
 > Dates use the `YYYY-MM-DD` format and releases are listed from newest to oldest.
 
-## [3.0.0-dev.4] - 2025-11-17
+## [3.0.0-dev.5] - 2025-11-17
 
 > [!WARNING]
 > This is a development pre-release built from the `main` branch.

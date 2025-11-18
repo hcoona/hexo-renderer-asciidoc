@@ -31,6 +31,8 @@ jobs:
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
