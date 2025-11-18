@@ -35,7 +35,11 @@
   },
   "keywords": [
     "hexo",
-    "asciidoc"
+    "hexo-plugin",
+    "renderer",
+    "hexo-renderer",
+    "asciidoc",
+    "asciidoctor"
   ],
   "author": "Zhang Shuai",
   "license": "LGPL-3.0-or-later WITH LGPL-3.0-linking-exception",

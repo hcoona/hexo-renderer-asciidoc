@@ -3,26 +3,54 @@
  SPDX-License-Identifier: LGPL-3.0-or-later WITH LGPL-3.0-linking-exception
 -->
 
-# Asciidoc Renderer for Hexo
+# hexo-renderer-asciidoc
 
-[![Build Status](https://travis-ci.org/hcoona/hexo-renderer-asciidoc.svg?branch=master)](https://travis-ci.org/hcoona/hexo-renderer-asciidoc)
-[![npm version](https://badge.fury.io/js/hexo-renderer-asciidoc.svg)](https://badge.fury.io/js/hexo-renderer-asciidoc)
-[![Coverage Status](https://coveralls.io/repos/github/hcoona/hexo-renderer-asciidoc/badge.svg?branch=master)](https://coveralls.io/github/hcoona/hexo-renderer-asciidoc?branch=master)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc?ref=badge_shield)
+[![CI](https://github.com/hcoona/hexo-renderer-asciidoc/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/hcoona/hexo-renderer-asciidoc/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/hexo-renderer-asciidoc.svg?logo=npm)](https://www.npmjs.com/package/hexo-renderer-asciidoc)
+[![Node support](https://img.shields.io/node/v/hexo-renderer-asciidoc.svg?logo=node.js)](package.json)
+[![License: LGPL-3.0-or-later](https://img.shields.io/badge/license-LGPL--3.0--or--later-0a76d5.svg)](LICENSE)
 
-Add Asciidoc support to Hexo. This plugin uses [asciidoctor.js](https://www.npmjs.com/package/asciidoctor.js) as the
-rendering engine.
+Add first-class [AsciiDoc](https://asciidoc.org/) support to Hexo. The renderer piggybacks on [asciidoctor.js](https://www.npmjs.com/package/asciidoctor) 3.x, swaps Asciidoctor’s code blocks with Hexo’s static highlighter, and escapes template delimiters so the resulting HTML can flow back through Hexo safely.
 
-## Install
+## Security defaults
+
+- The renderer runs Asciidoctor in `safe: 'server'` mode, which blocks shelling out and limits file access to the site root.
+- Output HTML is **not** sanitized beyond encoding `{` / `}`; treat your AsciiDoc sources as trusted or run Hexo through an additional sanitizer (DOMPurify, OWASP Java HTML Sanitizer, etc.) before publishing user-generated content.
+- Code blocks are re-highlighted via `hexo-util` so they inherit whatever theme/config you enable in `_config.yml`.
+
+## Requirements & installation
+
+| Dependency | Minimum version |
+| ---------- | --------------- |
+| Node.js    | 20.19.0         |
+| Hexo       | 8.0.0           |
+
+Install from npm (choose the package manager that matches your Hexo project):
 
 ```bash
 npm install hexo-renderer-asciidoc --save
+# or
+pnpm add hexo-renderer-asciidoc
 ```
+
+Once installed, Hexo automatically pipes `.ad`, `.adoc`, and `.asciidoc` files through this renderer, no extra glue code is required.
+
+### Minimal Hexo configuration
+
+AsciiDoc posts reuse Hexo’s regular highlighting settings. A typical `_config.yml` looks like this:
+
+```yml
+highlight:
+  enable: true
+  line_number: false
+  wrap: false
+```
+
+Keep `highlight.enable` turned on even if you never write Markdown; the renderer calls the same helper under the hood to keep code blocks consistent with the theme.
 
 ## Example Hexo site
 
-Want to test-drive the renderer without publishing to npm? A fully wired Hexo
-site lives under `examples/hexo-site`.
+A self-contained demo lives at `examples/hexo-site`. It links to the local workspace via `link:../..`, so every change you make to the renderer is reflected instantly.
 
 ```bash
 cd examples/hexo-site
@@ -30,86 +58,85 @@ pnpm install
 pnpm dev
 ```
 
-> [!TIP]
-> The example site is intentionally kept outside the root pnpm workspace.
-> Always run the commands above from inside `examples/hexo-site` so its Hexo
-> dependencies stay isolated from the main package.
-> That folder ships its own `pnpm-workspace.yaml` + lockfile to force pnpm to
-> stay local, so keep those helper files intact when copying the sample.
+> [!NOTE]
+> The sample site is intentionally outside the root pnpm workspace. Always run pnpm commands from inside `examples/hexo-site` so Hexo’s dependencies stay isolated. Its `pnpm-workspace.yaml` and lockfile must remain in that folder when you copy the demo elsewhere.
 
-The example site uses this repository via a local `link:` dependency, so any
-changes you make to the renderer are reflected immediately. Browse the `.adoc`
-sources under `examples/hexo-site/source/` to see how admonitions, callouts,
-syntax highlighting, and other features behave end-to-end.
+Browse `examples/hexo-site/source/` for end-to-end samples of admonitions, callouts, audio/video embeds, and other constructs covered by the test suite.
 
-## Development
+## Feature highlights
+
+- **AsciiDoc parity.** Snapshot-style doctests (`test/doctest/*.test.ts`) mirror sections from the Asciidoctor user manual so features such as admonitions, description lists, colists, inline UI macros, and complex tables stay stable between releases.
+- **Zero-config Hexo integration.** `src/hexo/register.ts` wires the renderer for `.ad`, `.adoc`, and `.asciidoc` extensions with synchronous semantics so Hexo’s asset pipeline can stream results as soon as they are available.
+- **Static highlighting bridge.** `src/core/highlight.ts` walks every `<pre class="highlight">` block produced by Asciidoctor and re-renders it with `hexo-util.highlight`, ensuring your Hexo theme powers the final markup (including languages not known to Asciidoctor’s built-in highlighters).
+- **Template safety.** `src/core/sanitize.ts` encodes `{` / `}` characters before returning control to Hexo so they are not interpreted as Nunjucks placeholders.
+- **Tested in Hexo.** `test/hexo.integration.test.ts` spins up a real Hexo instance to guarantee the renderer continues to work with Hexo’s official API.
+
+## Programmatic usage
+
+The default export is the pure renderer function. You can reuse it in custom build scripts or other static-site setups:
+
+```ts
+import renderer from 'hexo-renderer-asciidoc';
+
+const html = renderer({ text: '== Custom pipeline ==' });
+```
+
+Hexo users rarely need this, but it is handy for local testing or for wiring the renderer into other tools.
+
+## Development workflow
 
 ### Toolchain bootstrap
 
-Install the pinned toolchain with [mise](https://mise.jdx.dev/), then install Node dependencies and register the Git
-hooks powered by [HK](https://github.com/jdx/hk).
-
 ```bash
-mise install
-pnpm install
-hk install
+mise install        # Install pinned versions of Node, pnpm, hk, etc.
+pnpm install        # Install workspace dependencies
+hk install          # Register git hooks (lint, format, tests)
 ```
 
-### TypeScript development
+### Common scripts
 
-- Runtime sources now live entirely in `src/` (pure TypeScript). We still ship CommonJS so Hexo users do not have to
-  change anything—`tsdown` bundles the sources into `dist/` during `pnpm build`.
-- `pnpm build` runs `tsdown build`, generating both executable CJS (`dist/index.js`, `dist/lib/renderer.js`) and the
-  corresponding `.d.ts` files consumed by downstream projects.
-- `tsconfig.json` focuses on type safety only (`noEmit`); use `pnpm typecheck` to validate sources without touching the
-  compiled output.
+| Command           | Purpose                                                             |
+| ----------------- | ------------------------------------------------------------------- |
+| `pnpm lint`       | Run Biome for JS/TS/JSON and Markdownlint/Prettier for docs.        |
+| `pnpm format`     | Apply the same formatters with `--write`.                           |
+| `pnpm typecheck`  | Run `tsc --noEmit` for strict type safety.                          |
+| `pnpm test`       | Execute the entire Vitest suite (including doctests + integration). |
+| `pnpm test:watch` | Rerun the impacted tests in watch mode.                             |
+| `pnpm test-cov`   | Generate text + LCOV coverage via V8.                               |
+| `pnpm build`      | Bundle `src/` with `tsdown` into the publishable `dist/`.           |
+| `hk check`        | Execute every hook (lint, format, typos, tests) exactly like CI.    |
 
-```bash
-pnpm typecheck    # Type-check JS/TS sources without emitting files
-pnpm build        # Build TypeScript in src/ into dist/
-```
+### Source layout overview
 
-### Source layout
+- `src/core/` – Asciidoctor bootstrap, syntax highlighting bridge, and HTML safety helpers.
+- `src/hexo/` – The Hexo adapter that registers the renderer for `.ad` / `.adoc` / `.asciidoc` files.
+- `examples/hexo-site/` – Real Hexo project wired to the local package for smoke testing and documentation screenshots.
+- `scripts/npm-readme.cjs` – Swaps `README.md` with `README.npm.md` during `npm pack` so the npm landing page gets the end-user guide without disturbing this contributor-focused README.
 
-The renderer now mirrors the modernization blueprint shared earlier:
+### Tests & fixtures
 
-- `src/core/` keeps the pure rendering pipeline (Asciidoctor bootstrapping, static highlighting, and HTML sanitisation).
-- `src/hexo/` contains the Hexo-only wiring logic (`registerRenderer`) so framework glue stays isolated from core logic.
-- `src/lib/renderer.ts` is a thin compatibility shim that re-exports the new core renderer to keep older imports working.
+- Doctests live under `test/doctest/` and load fixture snippets from `test/doctest/examples/asciidoc/*.adoc` before snapshotting the rendered HTML.
+- `test/highlight.test.ts` ensures the static highlighter decodes entities before passing code to Hexo.
+- `test/hexo.integration.test.ts` boots Hexo and exercises the renderer via `hexo.render.render`.
 
-This separation keeps pure functions testable without Hexo, while the Hexo adapter simply registers the shared renderer
-for `.ad`, `.adoc`, and `.asciidoc` inputs.
-
-### Testing
-
-Vitest now drives the renderer regression suite. The scripts mirror the old Mocha workflow but with faster watch and
-first-class coverage support.
+Run all doctests while iterating on Asciidoctor upgrades:
 
 ```bash
-pnpm test        # Run Vitest once in CI mode
-pnpm test:watch  # Watch files and re-run the impacted tests
-pnpm test-cov    # Produce text + lcov coverage via V8 instrumentation
+pnpm test --filter Doctest
 ```
 
-### Linting and formatting
+### Release checklist
 
-Biome takes care of JS/TS/JSON (the `js-biome` and `json-biome` HK steps cover
-`.js/.cjs/.mjs/.ts/.tsx/.jsx/.cts/.mts/.json/.jsonc/.json5`), while Prettier focuses on Markdown. HK unifies these steps
-into the `pre-commit`, `pre-push`, `check`, and `fix` hooks, so running `hk check` locally mirrors the CI experience.
+1. `pnpm typecheck && pnpm test` – add/adjust fixtures if coverage drops.
+2. `pnpm build` – refresh `dist/` via `tsdown`.
+3. Update `ChangeLog.md` and bump the semver in `package.json`.
+4. `pnpm publish` – the `prepublishOnly` hook rebuilds automatically, and `scripts/npm-readme.cjs` swaps the npm README before the tarball is packed.
 
-```bash
-pnpm lint          # Run Biome plus Markdown validation
-pnpm format        # Auto-format with Biome and Prettier
-hk check           # Execute every hook
-hk fix             # Attempt auto-fixes for supported steps
-```
+## Continuous integration
 
-### Release / npm publish preparation
-
-1. `pnpm typecheck && pnpm test` (add tests if needed for coverage).
-2. `pnpm run build` (bundles `src/` via tsdown and refreshes the distributable in `dist/`).
-3. `pnpm publish` (the prepublish hook runs `pnpm build`, so CI can call `pnpm publish --access public` directly).
+- `.github/workflows/ci.yml` runs linting, type checks, Vitest, and the production build on Node 20.19 / 20.x / 22.x / 24.x.
+- `.github/workflows/codeql.yml` keeps CodeQL scanning the TypeScript sources on every push and a weekly schedule.
 
 ## License
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fhcoona%2Fhexo-renderer-asciidoc?ref=badge_large)
+Licensed under **LGPL-3.0-or-later WITH LGPL-3.0-linking-exception**. See `COPYING`, `COPYING.LESSER`, and `LICENSES/` for the full texts. Commercial redistribution requires compliance with the linking exception.
