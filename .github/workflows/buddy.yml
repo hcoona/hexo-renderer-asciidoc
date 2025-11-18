@@ -36,7 +36,6 @@ jobs:
           cache: pnpm
           cache-dependency-path: pnpm-lock.yaml
           registry-url: https://npm.pkg.github.com
-          scope: '@hcoona'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -84,4 +83,4 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
-          pnpm publish --registry https://npm.pkg.github.com --access public --no-git-checks --tag "${{ steps.dist_tag.outputs.tag }}"
+          npm publish --access public --tag "${{ steps.dist_tag.outputs.tag }}"
