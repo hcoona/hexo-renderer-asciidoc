@@ -1,9 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`DocTest:inline_callout > basic 1`] = `
-"<div class="listingblock">
-<div class="content">
-<pre><code class="highlight plaintext">&quot;Hello world!&quot; // (1)</code></pre>
-</div>
-</div>"
-`;

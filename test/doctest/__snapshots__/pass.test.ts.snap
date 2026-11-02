@@ -1,6 +1,0 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
-
-exports[`DocTest:pass > basic 1`] = `
-"<p>Allons-y!</p>
-image:tiger.png[]"
-`;
